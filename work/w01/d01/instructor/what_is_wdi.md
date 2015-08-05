@@ -171,7 +171,6 @@ your growth as a learner, but in the end it is up to you to use this structure
 
 - Define the term **abstraction**.
 - Define the term **encapsulation**.
-- Define the term **interfaces**.
 - Define the term **modeling**.
 
 *Take your own notes!* :smile:
