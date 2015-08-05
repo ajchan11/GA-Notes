@@ -79,18 +79,16 @@ If you want to email the entire class and the instructional team, please use:
 | Noah Mangubat      | aeon37@gmail.com             | @               |  |
 | Dan McQuillan      | djmcquillan76@gmail.com      | @               |  |
 | Jeff Lipp          | jefflipp@gmail.com           | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
-|                    |                              | @               |  |
+| Julie Heidt        | julie.a.heidt@gmail.com      | @               |  |
+| Kayla Moore        | kaylamoo@usc.edu             | @               |  |
+| Kyle King          | kylerking@me.com             | @               |  |
+| Leslie Pegue       | lpegue4@gmail.com            | @               |  |
+| Noah Mangubat      | aeon37@gmail.com             | @               |  |
+| Percival Loyola    | percivalloyal@gmail.com      | @               |  |
+| Sean Oh            | seanjoh2@gmail.com           | @               |  |
+| Steve Judd         | sejudd1@gmail.com            | @               |  |
+| Alex Chan          |                              | @               |  |
+
 
 ## Important Dates
 
