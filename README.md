@@ -35,7 +35,7 @@ instructional team and classmates, please follow the
 | **Course Producer**       | Taylor Higgins | @taylorhiggins| taylorh@ga.co        | [taylorhiggins][taylorhiggins] |
 | **Instructor**            | Blaise Thomas  | @blaisethomas | blaise.thomas@ga.co  | [blaisethomas][blaisethomas] |
 | **Instructor**            | John McDonald  | @john.mcdonald| john.mcdonald@ga.co  | [johnptmcdonald][johnptmcdonald] |
-| **Instructor**            | Eric Hodonsky  | @             | eric.hodonsky@ga.co  | [relicmelex][relicmelex] |
+| **Instructor**            | Eric Hodonsky  | @eric.hodonsky| eric.hodonsky@ga.co  | [relicmelex][relicmelex] |
 | **Instructional Support** | Meredith Bryan | @meredith     | meredith.bryan@ga.co | [mer8][mer8] |
 
 ### TAs
