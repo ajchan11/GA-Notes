@@ -1,18 +1,17 @@
-# WDI 1.3 Afternoon - Your Terminal
+# WDI 1.3 - Afternoon - Your Terminal
 ## Interacting with your computer: via text
 
 | **Section**      | **Timing** | **Summary**                                                             |
 |------------------|------------|-------------------------------------------------------------------------|
-| Morning (Objectives) | 5 min     | Introduce material - icebreaker |
-| Opening          | 5 min    | Role and Importance of the terminal |
-| I Do             | 10 min    | Simple terminal commands |
-| We Do            | 5 min    | Simple Terminal Commands |
-| I Do             | 10 min     | Creating, removing files and folders |
-| We Do				| 5 min    | Making files and folders |
-| You Do				| 10 min    | Create file/folder structure for personal course repo |
-| I Do					| 10 min    | Moving and copying files with `mv` and  `cp` |
-| You Do				| 15 min    | Create collection of files, directories to manage Spice Girls' lyrics |
-
+| Morning (Objectives)	| 5 min    | Introduce material - icebreaker |
+| Opening          		| 5 min    | Role and Importance of the terminal |
+| I Do             		| 10 min   | Simple terminal commands |
+| We Do            		| 5 min    | Simple Terminal Commands |
+| I Do             		| 10 min   | Creating, removing files and folders |
+| We Do					| 5 min    | Making files and folders |
+| You Do					| 10 min   | Create file/folder structure for personal course repo |
+| I Do						| 10 min   | Moving and copying files with `mv` and  `cp` |
+| You Do					| 15 min   | Create collection of files, directories to manage Spice Girls' lyrics |
 
 
 ##1.Lesson - 1 hour 15 min
@@ -267,8 +266,4 @@ What commands did you use to remove the spice girls?
   $ rm -rf spice_girls
 ```
 
-
-
-BONUS:
-tree
-history
+###### BONUS: `apt-get install tree` & `history`
