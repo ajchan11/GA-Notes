@@ -1,9 +1,10 @@
+<!-- Instructor: $ source w01/d01/samples/setup.sh -->
 # WDI 1.3 - Afternoon - Your Terminal
 ## Interacting with your computer: via text
 
 | **Section**      | **Timing** | **Summary**                                                             |
 |------------------|------------|-------------------------------------------------------------------------|
-| Morning (Objectives)	| 5 min    | Introduce material - icebreaker |
+| Morning (Objectives)	| 5 min    | Introduce material |
 | Opening          		| 5 min    | Role and Importance of the terminal |
 | I Do             		| 10 min   | Simple terminal commands |
 | We Do            		| 5 min    | Simple Terminal Commands |
@@ -66,33 +67,36 @@ ________________________________________________________________________________
 
 ## I Do: Simple Terminal Commands - 10 minutes
 
-#### Students:
- - Close laptops for instructor demo
+##### Students: *close laptops for demo*
 
-*Point out* that if we were IN finder:
+If we were IN **finder**:
+ 
+ - We should know what directory we are in
+ - We should see what files and directories are in that current directory
 
-  1. We should know what directory we are in
-  2. we should see what files and directories are in that current directory
+**Question**: How do we do this in the terminal, and what should it look like?
 
-**Question**: How do we do this in the terminal?
-
-**Student Answer**:
-
-  1. typing `pwd` and hitting enter is like asking the computer "where am I?"
+<!-- Student Answer:
+  1. `pwd` is like asking the computer "where am I?"
     - directory structures are laid out like `directory/subdirectory/subdirectory`
-  2. typing `ls` and hitting enter is like asking the computer the question  "what stuff is in this directory?"
+  2. `ls`  is like asking the computer "what stuff is in this directory?"
+-->
 
-#### Exploring your home directory`cd && ls`
+#### Exploring your home directory `cd && ls`
+- TAB AUTO COMPLETE
 - Use the `cd` command to go to your home folder.
  <br />
 **Question**: “What do you see?”
-- Use the `ls` command see what is in your home directory.
+- Use the `ls -a` command see what is in your home directory.
 <br />
 **Question**: “What do you see?  Choose a directory.”
 - Use the `cd [directory]` command to go into any folder that you spot.
 In the above command, replace  [directory] with the directory name you intend to move to.
 - Use the `ls` command to see what files and directories exist there.
 - Use the `cd` command to go to your home folder.
+
+<br />
+## We Do:  Simple Terminal Commands - 5 min
 
 #### Directions
 Lets open up a terminal and `pwd`, `ls`
@@ -110,18 +114,26 @@ For example:
 
 ```bash
 $ pwd
-/home/ubuntu/ga_stuff
+/Users/u_name/ga_stuff
+or
+/home/u_name/ga_stuff
+
 $ ls
 .  ..  example.txt
 ```
 
-## We Do:  Simple Terminal Commands - 5 min
 
 
 #### CFU:
 
 **Question:** How do we navigate directories?
+ 
+ - Go to your home dir.
+ - Go into a child dir, ...any one.
+ - Go back up to the parent directory
+ - `ls -a`
 
+<!--
 **Student Answer:**
 
   1.  `cd` by itself… takes you to your home directory
@@ -130,88 +142,110 @@ $ ls
   2. `cd directory` moves our current location to the directory
   3. `cd ..` moves our current location to the parent directory (what is one directory “up”?)
   4. `cd ../..` moves our current location two directories “up”
+-->
+--
+##### PAUSE FOR ANSWERS
+--
+<br/>
+<br/>
 
-
-
-
-## I Do:  Making directories and files - 10 min
+## I Do:  Making directories and files & rimraf - 10 min
 
 **Question**: What if we want to create files and folders?
 
-  - `mkdir directoryName` creates a new directory with the name “directoryName”
+  - `mkdir dirName` creates a new directory with the name “directoryName”
   - `mkdir myProject` creates a new directory with the name “myProject”
 This new directory will be created within the current parent directory.
 For example, within your home directory, if I type “mkdir NewDirectory”, you’ll notice a new directory named NewDirectory in your home directory.
-- `touch fileName` creates a new file with the name “fileName”
-- `touch myFile` creates a new file with the name “myFile”
-- This new file will be created within the current parent directory.
+- `touch fileName.txt` creates a new file with the name “fileName.txt”
+- `touch myFile.txt` creates a new file with the name “myFile.txt”
+- This new file will be created within the current directory.
+
+***Example:***
 
 ```bash
-$ touch happy.txt
-$ mkdir happyBox
-$ mv happy.txt happyBox/
-$ cp happyBox/happy.txt kindaHappy.txt
-$ mv kindaHappy.txt problems.txt
-$ rm problems.txt example.txt
+$ touch example.txt
+$ mkdir exDir
+$ mv example exDir/
+$ cp exDir/example example.txt.bak
+$ mv example.txt.bak example.txt
 ```
+ 
+**CFU:**
 
-  
-**Question:** Change directories into the happyBox directory we just created.  Identify the syntax to create an unhappy text file, create an unhappyBox directory, and move the unhappy file into the appropriate directory.
+ - Change directories into the `exDir` directory we just created.
+ - Identify the syntax to create a backup text file
+ - Create an example directory
+ - Move the backup file into the example directory.
 
+<!--
 **Student Answer**:
 
 ```bash
-$ touch happy.txt
-$ mkdir unhappyBox
-$ mv unhappy.txt unhappyBox/
+$ touch example.txt
+$ cp example.txt example.txt.bak
+$ mkdir exDir
+$ mv example.txt.bak exDir/
 ```
+-->
+<br/>
+--
+##### PAUSE FOR ANSWERS
+--
+<br/>
+<br/>
 
 **Question**: What if we want to remove files and folders?
 
-  -  Setup:  `touch junkFile`   `mkdir junkDirectory` `touch junkDirectory/innerJunkFile`  `ls`
-  - `rm fileName` removes the file “filename”
-  - `rm -r junkDirectory` removes the file “innerJunkFile” and the directory junkDirectory
+<!-- setup_1
+$ touch junkFile.txt && mkdir junkDirectory && touch junkDirectory/innerJunkFile.txt; clear; ls;
+-->
 
-
-`mkdir` `rm` and `touch` can be used to create more than one file/directory at the same time.
-
-- `mkdir directory01 directory02 directory03`
-- `touch file01 file02 file03`
-- `rm file01 file03`
-
+  - `rm junkFile.txt` removes the file “junkFile.txt”
+  - `rmdir junkDirectory` attempts to remove the directory `junkDirectory`, however it must be empty
+  - `rm -r junkDirectory` removes the file “innerJunkFile.txt” and the directory junkDirectory
+  - `mkdir` `rm` and `touch` can be used to create more than one file/directory at the same time. **Example:**
+  
+	```bash
+	$ mkdir directory01 directory02 directory03
+	$ touch file01 file02 file03
+	$ rm file01 file03
+	$ cd ../
+	$ rm -rf samples
+	```
+<br/>
+<br/>
+<br/>
 
 
 ## We Do: Making files and folders - 5 min
-
-#### Directions to students:
 
   1. `mkdir films` to make a directory
   2. `cd films` to go into that directory
   3. `ls` to see where you are
     - directory is empty, nothing there
-  4. `touch casablanca` to make a file
+  4. `touch casablanca.txt` to make a file
   5. `subl casablanca` to open that file
     - add some text just to try it out, for example the text ‘Hello File!!’
-    - mac text shortcuts are on the cheatsheet
-  6. `touch jaws titanic twilight` to make more movies!
+  6. `touch jaws.txt titanic.txt twilight.txt` to make more movies!
   7. `subl .` to open the whole directory
     - add some text to the other files
   8. Close Submlime, make sure everything is saved
-  9. `rm casablanca jaws` to remove a couple movies
+  9. `rm casablanca.txt jaws.txt` to remove a couple movies
 
 **Tip:** You can use the up and down arrows to go through your command history<br />
-**Expert Tip:** use command `history` to look back instead
+**Tip:** use command `history` to look back also
 
 
 
-## You Do: Create the folder structure weekly/daily, wXX/dXX - 10 min
+## You Do: Create the folder structure - 10 min
+**weekly/daily : wXX/dXX**
 
 #### Directions to students:
 We are going to be working on a lot of projects throughout this course. It would be good if we had folders for each day.
 
   - Create 12 folders for each week of the course. (e.g. `w01`, `w02`, etc.)
   - In each week folder, create 5 day folders (e.g. `d01`, `d02`, etc.)
-  - **Hint:** You can use the up arrow to repeat any commands that you executed before
 
 #### CFU: What is a solution with minimal amount of typing?
 
@@ -223,14 +257,14 @@ $ cd ../w02
 ```
 
 ## I Do:  Moving and Copying files (`mv` and `cp`)
-**Question**: What if we wanted to move the folder "movies" into todays week and day folder
+**Question**: What if we wanted to move the folder "films" into todays week and day folder
 
 ```bash
 $ cd
-$ mv movies w01/d01/movies
+$ mv films w01/d01/films
 ```
 
-*Explain* how you can give `folder/subfolder/file` paths to `mkdir`, `touch`, `cd` etc.
+*You can give `folder/subfolder/file` paths to `mkdir`, `touch`, `cd` etc.*
 
 **Question**: How would we copy a folder?
 
@@ -266,4 +300,4 @@ What commands did you use to remove the spice girls?
   $ rm -rf spice_girls
 ```
 
-###### BONUS: `apt-get install tree` & `history`
+###### BONUS: `apt-get install tree`
