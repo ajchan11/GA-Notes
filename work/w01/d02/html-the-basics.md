@@ -1,4 +1,18 @@
-## 2.1 - Intro to HTML ( The Basics )
+<!-- Instructor: $ cd w01/d02/samples/ && source setup.sh -->
+## WDI 2.1 - Morning - Intro to HTML ( The Basics )
+
+| **Section**      | **Timing** | **Summary**                                                             |
+|------------------|------------|-----|
+| Morning (Objectives)	| 5 min    |  |
+| Opening          		| 5 min    |  Markdown - Markup|
+| I Do             		| 10 min   |  |
+| We Do            		| 5 min    |  |
+| I Do             		| 10 min   |  |
+| We Do					| 5 min    |  |
+| You Do					| 10 min   |  |
+| I Do						| 10 min   |  |
+| You Do					| 15 min   |  |
+
 ### Objectives (SWBAT):
  - Write HTML that gets rendered as a document in the browser
  - Build a form with different types of inputs
@@ -18,9 +32,20 @@ We use markdown...
 ```
 
 #### 2.1.2 - Standard markup
-Stuff
+
+- HTML: Hypertext Markup Language: *a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages.*
+- DOCTYPE:
+- The text between <html> and </html> describes an HTML document(W3Schools)
+- The text between <head> and </head> provides information about the document (W3Schools)
+	- The text between <title> and </title> provides a title for the document (W3Schools)
+- The text between <body> and </body> describes the visible page content (W3Schools)
+- script
+- External styles are defined in an external CSS file, and then linked to in the <head> section of an HTML page using the <link /> tag
+- Internal styling is defined in the <head> section of an HTML page, using a <style> element
 
 ```html
+	<!DOCTYPE html>
+	
 	<html></html>
 	
 	<head></head>
@@ -32,6 +57,8 @@ Stuff
 	<script></script>
 	
 	<style></style>
+	
+	<link rel=''/>
 ```
 
 #### 2.1.3 - Commonly used Tags
@@ -65,6 +92,7 @@ So the types change what 'view' is set for the on-screen keyboard. For example t
 	- ACTION: "/url/for/domain"
 	- ACCEPT-CHARSET: "utf8"
 	- TARGET: "_blank"
+	- ENCTYPE: 
 
 ```html
 	<form method="post" action="url://" >
@@ -116,6 +144,7 @@ So the types change what 'view' is set for the on-screen keyboard. For example t
 				Radio 2: <input type="radio" name="radOne" value="2" />
 			</form>
 		</section>
+		<scripy></script>
 	</body>
 </html>
 ```

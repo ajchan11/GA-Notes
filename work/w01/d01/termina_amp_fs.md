@@ -1,10 +1,10 @@
-<!-- Instructor: $ source w01/d01/samples/setup.sh -->
+<!-- Instructor: $ cd w01/d01/samples/ && source setup.sh -->
 # WDI 1.3 - Afternoon - Your Terminal
 ## Interacting with your computer: via text
 
 | **Section**      | **Timing** | **Summary**                                                             |
 |------------------|------------|-------------------------------------------------------------------------|
-| Morning (Objectives)	| 5 min    | Introduce material |
+| Objectives        	| 5 min    | Introduce material |
 | Opening          		| 5 min    | Role and Importance of the terminal |
 | I Do             		| 10 min   | Simple terminal commands |
 | We Do            		| 5 min    | Simple Terminal Commands |
