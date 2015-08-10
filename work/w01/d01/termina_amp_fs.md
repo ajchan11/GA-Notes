@@ -3,7 +3,7 @@
 ## Interacting with your computer: via text
 
 | **Section**      | **Timing** | **Summary**                                                             |
-|------------------|------------|-------------------------------------------------------------------------|
+|------------------|------------|----------------------------------------|
 | Objectives        	| 5 min    | Introduce material |
 | Opening          		| 5 min    | Role and Importance of the terminal |
 | I Do             		| 10 min   | Simple terminal commands |
@@ -21,7 +21,7 @@
 
 - Describe the role and importance of the terminal
 - Navigate through directories in the terminal
-- Create, copy, move, and remove files from the terminal
+- Create, copy, move, and remove files via the terminal
 - Open files and directories in sublime
 
 #### Connection to Long Term Learning Goals
@@ -65,7 +65,21 @@ ________________________________________________________________________________
 
 
 
-## I Do: Simple Terminal Commands - 10 minutes
+## I Do: Simple Terminal Commands & Shortcut Keys - 10 minutes
+### Shortcut Keys - time to form new good habits.
+######*For you windows user replace all instances of 'CMD' with 'CTRL'*
+| Keys       | Plain English 			|
+|------------|-----------------------|
+| CMD + N		| New Window				|
+| CMD + T		| New Tab					|
+| CMD + W 	| Close Tab / Window 	|
+| CMD + Q		| Quit						|
+| CMD + O 	| Open						|
+| CMD + S		| Save						|
+| CMD + X 	| Cut						|
+| CMD + C 	| Copy 					|
+| CMD + V		| Paste					|
+| CMD + Space	| Spotlight  				|
 
 ##### Students: *close laptops for demo*
 
@@ -293,7 +307,7 @@ While building web application, we seek to efficiently organizing/modify our fil
   2. remove the folder `spice_girls_backup`
 
 #### CFU:
-What commands did you use to remove the spice girls?
+What commands did you use to remove the spice girlss?
 
 ```bash
   $ cp -R spice_girls spice_girls_backup

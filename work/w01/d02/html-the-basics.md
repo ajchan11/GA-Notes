@@ -1,102 +1,136 @@
 <!-- Instructor: $ cd w01/d02/samples/ && source setup.sh -->
-## WDI 2.1 - Morning - Intro to HTML ( The Basics )
+# WDI 2.1 - Morning - Intro to HTML ( The Basics )
+--
 
-| **Section**      | **Timing** | **Summary**                                                             |
-|------------------|------------|-----|
-| Morning (Objectives)	| 5 min    |  |
-| Opening          		| 5 min    |  Markdown - Markup|
-| I Do             		| 10 min   |  |
-| We Do            		| 5 min    |  |
-| I Do             		| 10 min   |  |
-| We Do					| 5 min    |  |
-| You Do					| 10 min   |  |
-| I Do						| 10 min   |  |
-| You Do					| 15 min   |  |
+| **Section**          | **Timing** |        **Summary**                  |
+|----------------------|------------|-------------------------------------|
+| Morning (Objectives)	| 5 min      | Intro to HTML                       |
+| I Do             		| 10 min     | 2.1.2 - Standard Markup             |
+| We Do            		| 10 min     | 2.1.2 - Commonly used Tags          |
+| I Do             		| 5 min      | 2.1.3 - Lists (ordered & unordered) |
+| We Do					| 10 min     | 2.1.4 - Forms & Inputs              |
+| I Do						| 10 min     | 2.1.5 - New symantic HTML5 tags     |
+| We Do					| 5 min      | 2.1.6 - HTML: Blocks and Forms      |
+| You Do					| 15 min     | 2.1.7 - About Me                    |
+| Bonus					| 5 min		| 2.1.8 - Markdown
 
 ### Objectives (SWBAT):
  - Write HTML that gets rendered as a document in the browser
  - Build a form with different types of inputs
- - Explore and use a programming or markup language's standard library and built-in functions (Learn & use new semantic elements)
+ - Explore and use a markup language standard library and built-in functions (learn & use new semantic elements)
  - Use HTML5 structural elements
  - Understand a code style guide
 
 
-#### 2.1.1 - MarkDown
-We use markdown... 
+## 2.1.1 - Standard markup - 10 min
 
-```md
- h1 - # MarkDown
- h2 - ## MarkDown
- Link - [name](url:// )
- Image - ![alt](url:// )
-```
+**CFU: Give me 7 HTML Tags: one at a time...**
 
-#### 2.1.2 - Standard markup
+<br />
+--
+#### PAUSE 2 Min
+--
 
 - HTML: Hypertext Markup Language: *a standardized system for tagging text files to achieve font, color, graphic, and hyperlink effects on World Wide Web pages.*
 - DOCTYPE:
-- The text between <html> and </html> describes an HTML document(W3Schools)
-- The text between <head> and </head> provides information about the document (W3Schools)
-	- The text between <title> and </title> provides a title for the document (W3Schools)
-- The text between <body> and </body> describes the visible page content (W3Schools)
-- script
-- External styles are defined in an external CSS file, and then linked to in the <head> section of an HTML page using the <link /> tag
-- Internal styling is defined in the <head> section of an HTML page, using a <style> element
+- The text between `<html>` and `</html>` describes an HTML document(W3Schools)
+- The text between `<head>` and `</head>` provides information about the document (W3Schools)
+	- The text between `<title>` and `</title>` provides a title for the document (W3Schools)
+- The text between `<body>` and `</body>` describes the visible page content (W3Schools)
+- The text between `<script>` and `</script>` is for a logic based interpreted computer langauge like javascript for interacting with the browser.
+- External styles are defined in an external CSS file, and then linked to in the <head> section of an HTML page using the `<link />` tag (W3Schools)
+- Internal styling is defined in the <head> section of an HTML page, using a `<style> `element (W3Schools)
 
 ```html
-	<!DOCTYPE html>
-	
-	<html></html>
-	
-	<head></head>
-	
-	<title></title>
-	
-	<body></body>
-	
-	<script></script>
-	
-	<style></style>
-	
-	<link rel=''/>
+- <!DOCTYPE html>
+- <html></html>
+- <head></head>
+- <title></title>
+- <body></body>
+- <script></script>
+- <style></style>
+- <link rel=''/>
 ```
 
-#### 2.1.3 - Commonly used Tags
-Common tag things
+- Nesting **example:**
+	
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>
+		<link rel=''/>
+	</head>
+	<body>
+		<script></script>
+	</body>
+</html>
+```
+	
+
+
+## 2.1.2 - Commonly used Tags - 10 min
+Common tags
+ Headers, paragraphs, a, img, span, and div tags
 
 ```html
-	<div></div>
-	
-	<span></span>
-	
-	<section></section>
-	
-	<nav></nav>
+<h1>Hello World!</h1>	
+<p>
+	Paragraph
+</p>
+<span>small text</span>	
+<div>
+	Block Stuff & Text
+</div>
 ```
+#### We Do (Save a file): 
+Lets make a hello world file that shows our name in big bold text and a sub heading of 'Biography' and then a quick little paragraph about yourself.
+
+**CFU: What might this look like? Practice:**
+	
+<!--
+index.html
+<head><title>Hello World!</title></head>
+<h1>Eric Hodonsky</h1>
+<h2>Biography</h2>
+<p>
+	Biography goes here
+</p>
+--> 
+
+<br />
+--
+#### PAUSE
+--
+
+## 2.1.3 - Lists (horizontal & vertical) - 5 min
 
 
 
-#### 2.1.4 - Lists (horizontal & vertical)
 
-
-
-#### 2.1.5 -  Forms & Inputs
+## 2.1.4 -  Forms & Inputs - 10 min
 So there are 20+ types of inputs... Why so many and why are they different?
 For large format (Laptop/Desktop) input won't matter, however for mobile devices or smaller screens, the on-screen keyboard only has so much realestate.
 So the types change what 'view' is set for the on-screen keyboard. For example type `tel` gives just a telephone pad (numbers) on-screen
 
 - [More HTML input types](http://www.w3schools.com/html/html_form_input_types.asp)
 
-- The Tag:
-	- METHOD: "get | post | update | delete"
-	- ACTION: "/url/for/domain"
-	- ACCEPT-CHARSET: "utf8"
-	- TARGET: "_blank"
-	- ENCTYPE: 
+- The form tag: `<form> </form>`
+- Inputs... they need labels. It's bad form to wrap a label around an input
+
+| Property          | Value(s)                     |
+|-------------------|------------------------------|
+| METHOD				| get / post / update / delete |
+| ACTION				| "/url/for/domain"	           |
+| ACCEPT-CHARSET    | "utf8"                       |
+| TARGET 				| "_blank"                     |
+| ENCTYPE 			| "multipart/form"	           |
+
 
 ```html
-	<form method="post" action="url://" >
-		<input type="text" />
+	<form method="get" action="url://" >
+		<label for="forId">Text Input</label>
+		<input id="forId" type="text" />
 		<textarea></textarea>
 		<input type="password" />
 		<input type="radio" name="important" value="theVal"/>
@@ -121,7 +155,17 @@ So the types change what 'view' is set for the on-screen keyboard. For example t
 	</form>
 ```
 
-#### 2.1.6 - HTML: Blocks and Forms - All together
+##### We Do: Lets build a form that submits to itself
+
+- `<form action="/" method="get" ></form>`
+- Lets get a name `<
+
+## 2.1.5 - New symantic HTML5 tags
+this first
+then
+
+## 2.1.6 - HTML: Blocks and Forms - All together
+
 
 ##### Example:
 ```html
@@ -148,6 +192,21 @@ So the types change what 'view' is set for the on-screen keyboard. For example t
 	</body>
 </html>
 ```
+
+## 2.1.7 - About Me
+	Build a about me quick with what we've learned yesterday and today (we'll expand on it even more) as we go... 
+
+
+## 2.1.8 - MarkDown
+We use markdown... it's not super important.
+
+```md
+ h1 - # MarkDown
+ h2 - ## MarkDown
+ Link - [name](url:// )
+ Image - ![alt](url:// )
+```
+
 
 
 
