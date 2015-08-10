@@ -54,7 +54,7 @@ To be announced soon!
 [taylorhiggins]:  https://github.com/taylorhiggins   "Taylor's GitHub link"
 [blaisethomas]:   https://github.com/blaisethomas    "Blaise's GitHub link"
 [johnptmcdonald]: https://github.com/johnptmcdonald  "John's GitHub link"
-[relicmelex]:       https://github.com/relicmelex      "Eric's GitHub link"
+[relicmelex]:     https://github.com/relicmelex      "Eric's GitHub link"
 [mer8]:           https://github.com/mer8            "Meredith's GitHub Link"
 <!-- The TAs -->
 [ladanazita]:    https://github.com/ladanazita    "Ladan's GitHub Link"
@@ -64,7 +64,7 @@ To be announced soon!
 
 ### Class
 
-If you want to email the entire class and the instructional team, please use:   
+If you want to email the entire class and the instructional team, please use:
 **wdi-la-18@ga-groups.com**, our Google Group (aka listserv)!
 
 
@@ -162,7 +162,7 @@ After that, you can get all of the updates in the online repository from the
 instructors, work on it on your computer, and back up and share your work on
 your own online copy! We will go over this process (or "workflow") in class.
 
-The biggest rule is this: do not work in any folders (or make changes to any 
+The biggest rule is this: do not work in any folders (or make changes to any
 folders) named `instructor`. If at any time you see `instructor` in the path,
 don't make changes! Copy from those files in to your current working folder
 (either outside of your repo, or in the current week/day folder). That way
