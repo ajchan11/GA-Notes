@@ -69,17 +69,18 @@ ________________________________________________________________________________
 ### Shortcut Keys - time to form new good habits.
 ######*For you windows user replace all instances of 'CMD' with 'CTRL'*
 | Keys       | Plain English 			|
-|------------|-----------------------|
-| CMD + N		| New Window				|
-| CMD + T		| New Tab					|
-| CMD + W 	| Close Tab / Window 	|
-| CMD + Q		| Quit						|
-| CMD + O 	| Open						|
-| CMD + S		| Save						|
-| CMD + X 	| Cut						|
-| CMD + C 	| Copy 					|
-| CMD + V		| Paste					|
-| CMD + Space	| Spotlight  				|
+|----------------------|-----------------------|
+| CMD + N					| New Window		        |
+| CMD + T					| New Tab		           |
+| CMD + W 				| Close Tab / Window    |
+| CMD + Q					| Quit			           |
+| CMD + O 				| Open		              |
+| CMD + S					| Save		              |
+| CMD + X 				| Cut		              |
+| CMD + C 				| Copy                  |
+| CMD + V					| Paste                 |
+| CMD + Space				| Spotlight  		        |
+| CMD + Shift + Arrow	| Select Text 	        |
 
 ##### Students: *close laptops for demo*
 

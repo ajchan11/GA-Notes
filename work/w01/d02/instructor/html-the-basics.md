@@ -9,8 +9,8 @@
 | We Do            		| 10 min     | 2.1.2 - Commonly used Tags          |
 | I Do             		| 5 min      | 2.1.3 - Lists (ordered & unordered) |
 | We Do					| 10 min     | 2.1.4 - Forms & Inputs              |
-| I Do						| 10 min     | 2.1.5 - New symantic HTML5 tags     |
-| We Do					| 5 min      | 2.1.6 - HTML: Blocks and Forms      |
+| I Do						| 5 min      | 2.1.5 - New symantic HTML5 tags     |
+| We Do					| 10 min     | 2.1.6 - HTML: Blocks and Forms      |
 | You Do					| 15 min     | 2.1.7 - About Me                    |
 | Bonus					| 5 min		| 2.1.8 - Markdown
 
@@ -158,13 +158,32 @@ So the types change what 'view' is set for the on-screen keyboard. For example t
 ##### We Do: Lets build a form that submits to itself
 
 - `<form action="/" method="get" ></form>`
-- Lets get a name `<
+- Lets get a name `<input type="text" name="wholeName" value="" />`
 
 ## 2.1.5 - New symantic HTML5 tags
-this first
-then
+HTML5 has a lot of cool symantic built in tags, and pretty much all of the tags from before still exist. There's a lot of assumptions out there about HTML6, but don't believe the hype till the spec is agreed on.
 
-## 2.1.6 - HTML: Blocks and Forms - All together
+Examples:
+
+```html
+<header>
+	<nav></nav> // Navigation
+</header>
+<footer>&copy; Copywrite</footer>
+<section>Piece of a page</section>
+<article>An article, or excerpt</article>
+<canvas>Graphics & Physics tag</canvas>
+<command>button</command>
+<datalist>
+	<li></li>
+	<li></li>
+</datalist>
+<video src="">HTML5 Video</video>
+```
+
+## 2.1.6 - HTML: Blocks and Forms - All together - 5 min
+
+### We Do:
 
 
 ##### Example:
@@ -193,11 +212,12 @@ then
 </html>
 ```
 
-## 2.1.7 - About Me
-	Build a about me quick with what we've learned yesterday and today (we'll expand on it even more) as we go... 
+## 2.1.7 - About Me - 15 min
+### You Do:
+Build a 'About Me' page with what we've learned yesterday and today. We'll expand on it even more as we go... 
 
 
-## 2.1.8 - MarkDown
+## 2.1.8 - MarkDown - 5 min
 We use markdown... it's not super important.
 
 ```md
