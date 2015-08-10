@@ -2,17 +2,17 @@
 # WDI 1.3 - Afternoon - Your Terminal
 ## Interacting with your computer: via text
 
-| **Section**      | **Timing** | **Summary**                                                             |
-|------------------|------------|----------------------------------------|
-| Objectives        	| 5 min    | Introduce material |
-| Opening          		| 5 min    | Role and Importance of the terminal |
-| I Do             		| 10 min   | Simple terminal commands |
-| We Do            		| 5 min    | Simple Terminal Commands |
-| I Do             		| 10 min   | Creating, removing files and folders |
-| We Do					| 5 min    | Making files and folders |
-| You Do					| 10 min   | Create file/folder structure for personal course repo |
-| I Do						| 10 min   | Moving and copying files with `mv` and  `cp` |
-| You Do					| 15 min   | Create collection of files, directories to manage Spice Girls' lyrics |
+| **Section**      	| **Timing** | **Summary**                                                             |
+|------------------	|------------|-------------------------------------------------------------------------|
+| Objectives       	| 5 min    	| Introduce material  |
+| Opening         	| 5 min    	| Role and Importance of the terminal |
+| I Do            	| 10 min   	| Simple terminal commands |
+| We Do           	| 5 min    	| Simple Terminal Commands |
+| I Do      			| 10 min   	| Creating, removing files and folders |
+| We Do				| 5 min    	| Making files and folders |
+| You Do				| 10 min   	| Create file/folder structure for personal course repo |
+| I Do					| 10 min   	| Moving and copying files with `mv` and  `cp` |
+| You Do (LAB)		and| 15 min   	| Create collection of files, directories to manage Spice Girls' lyrics |
 
 
 ##1.Lesson - 1 hour 15 min
@@ -68,9 +68,9 @@ ________________________________________________________________________________
 ## I Do: Simple Terminal Commands & Shortcut Keys - 10 minutes
 ### Shortcut Keys - time to form new good habits.
 ######*For you windows user replace all instances of 'CMD' with 'CTRL'*
-| Keys       | Plain English 			|
+| Keys       				| Plain English         |
 |----------------------|-----------------------|
-| CMD + N					| New Window		        |
+| CMD + N					| New Window		       |
 | CMD + T					| New Tab		           |
 | CMD + W 				| Close Tab / Window    |
 | CMD + Q					| Quit			           |
@@ -81,6 +81,7 @@ ________________________________________________________________________________
 | CMD + V					| Paste                 |
 | CMD + Space				| Spotlight  		        |
 | CMD + Shift + Arrow	| Select Text 	        |
+| CMD + Shirt +T			| Open closed tab (browser)
 
 ##### Students: *close laptops for demo*
 
@@ -287,7 +288,7 @@ $ mv films w01/d01/films
  - `cp -r directory new-directory` create a copy of the entire “directory” and calls it “ new-directory”
 - The `-r` means “recursive” which just means copy each file and directory within
 
-## You Do: Spice Girls Exercise - 15 minutes
+## Lab: Spice Girls Exercise - 15 minutes
 #### Directions part 1:
 While building web application, we seek to efficiently organizing/modify our files and directories.  Using your terminal to navigate and modify files will become second nature.  We need to practice!  Let’s spice up our life with a collection of files and directories for managing the Spice Girls’ lyrics.
 
