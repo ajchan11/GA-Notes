@@ -196,7 +196,7 @@ Everything connected directly or indirectly to the Internet has an IP address! (
 
 ###Group exercise
 
-- Split into groups, each group will research HTTP, TCP, IP, and DNS. 
+- Split into groups, each group will research HTTP, TCP/IP, DNS, and Ports. 
 
 ------
 
