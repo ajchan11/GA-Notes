@@ -288,7 +288,23 @@ node -v
 
 You should see 0.12.4.
 
-## Download and install Sublime Text
+##Sublime Text 3
+
+* **Download and install [Sublime Text 3](http://www.sublimetext.com/3).** After running the downloaded file, a Finder window will open. Inside this window, drag the Sublime Text icon into the Applications folder.
+
+* **Add Sublime Text to your dock.** Press Command-Space to open Spotlight. Type Sublime, then drag the Sublime Text icon to the dock at the bottom of your screen. This allows you to easily open Sublime Text.
+
+* **Set up the subl command line tool.** In Terminal:
+
+```
+ln -s "/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl" /usr/local/bin/subl
+```
+
+To ensure that command worked, in Terminal type:
+	
+```
+subl --help
+```
 
 ## OPTIONAL
 
