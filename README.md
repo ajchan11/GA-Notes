@@ -71,23 +71,20 @@ If you want to email the entire class and the instructional team, please use:
 
 | Name               | Email | [Slack](https://ga-students.slack.com) | GitHub |
 |--------------------|:----------------------------:|:---------------:|:------:|
-| Adam Flaxman       | alflaxman@outlook.com        | @               | [shotbyabel](https://github.com/shotbyabel) |
-| Hope Kim           | hopekim511@gmail.com         | @               |  |
-| Leslie Pegue       | lpegue4@gmail.com            | @               |  |
-| Emily Lewis        | emilylewismft@gmail.com      | @               |  |
-| Steve Judd         | sejudd1@gmail.com            | @               |  |
-| Noah Mangubat      | aeon37@gmail.com             | @               |  |
-| Dan McQuillan      | djmcquillan76@gmail.com      | @               |  |
-| Jeff Lipp          | jefflipp@gmail.com           | @               |  |
-| Julie Heidt        | julie.a.heidt@gmail.com      | @               |  |
-| Kayla Moore        | kaylamoo@usc.edu             | @               |  |
-| Kyle King          | kylerking@me.com             | @               |  |
-| Leslie Pegue       | lpegue4@gmail.com            | @               |  |
-| Noah Mangubat      | aeon37@gmail.com             | @               |  |
-| Percival Loyola    | percivalloyal@gmail.com      | @               |  |
-| Sean Oh            | seanjoh2@gmail.com           | @               |  |
-| Steve Judd         | sejudd1@gmail.com            | @               |  |
-| Alex Chan          |                              | @               |  |
+| Adam Flaxman       | alflaxman@outlook.com        | @               | [ALFmachine](https://github.com/ALFmachine) |
+| Paul Cochrane      | pmcochrane@gmail.com         | @               | [cochranepaul](https://github.com/cochranepaul) |
+| Leslie Pegue       | lpegue4@gmail.com            | @               | [lpegue](https://github.com/lpegue)|
+| Greg Pynes         | sweet_lou513@yahoo.com       | @               | [gpynes](https://github.com/gpynes) |
+| Steve Judd         | sejudd1@gmail.com            | @               | [sejudd1](https://github.com/sejudd1) |
+| Noah Mangubat      | aeon37@gmail.com             | @               | [nmangubat](https://github.com/nmangubat) |
+| Jeff Lipp          | jefflipp@gmail.com           | @               | [jefflipp](https://github.com/jefflipp) |
+| Julie Heidt        | julie.a.heidt@gmail.com      | @               | [JulieHeidt](https://github.com/JulieHeidt) |
+| Kayla Moore        | kaylamoo@usc.edu             | @               | [kaylamoore](https://github.com/kaylamoore) |
+| Kyle King          | kylerking@me.com             | @               | [KyleRKing](https://github.com/KyleRKing) |
+| Percival Loyola    | percivalloyal@gmail.com      | @               | [PercivalJ](https://github.com/PercivalJ) |
+| Andre Soschinski   | contact@dresosh.com          | @               | [Dresosh](https://github.com/Dresosh) |
+| Brian Borin        | brianborin@icloud.com        | @               | [Briancodes33](https://github.com/Briancodes33) |
+| Alex Chan          | ajchan11@gmail.com           | @               | [AJChan11](https://github.com/AJChan11) |
 
 
 ## Important Dates
