@@ -1,5 +1,6 @@
 ## Lab: Spice Girls Exercise - 15 minutes
 #### Directions part 1:
+**(Please do this in your home directory)**
 While building web application, we seek to efficiently organizing/modify our files and directories.  Using your terminal to navigate and modify files will become second nature.  We need to practice!  Let’s spice up our life with a collection of files and directories for managing the Spice Girls’ lyrics.
 
  1. make a directory `spice_girls` to hold spice girls albums and songs
