@@ -20,7 +20,7 @@
  - Use HTML5 structural elements & Identify common HTML elements and write with correct syntax
  - Assign attributes to elements
  - Load external Stylesheets (CSS) and JavaScript files
- - Build a form with different types of inputs
+ - Identify different types of inputs
  - Explore and use a markup language standard library and built-in functions (learn & use new semantic elements)
  - Understand a code style guide
  - Correctly indent content according to document hierarchy
