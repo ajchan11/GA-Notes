@@ -103,16 +103,16 @@ Nested Relationships:
 | Active  	| `<a>`					| linking or actions (usually a CTA)
 | Image 		| `<img src="">` 		| includes an image
 | Inline 		| `<span>` 				| inline text formatting
-| Block 		| `<div>`					| block text 
-	
+| Block 		| `<div>`					| block text
+
 #### Span & Div
 `<span>` and `<div>` elements are used to define parts of a document so that they are identifiable when no other HTML element is suitable. Where no existing HTML element is applicable, span and div can valuably represent parts of a document so that HTML attributes such as class or id can be applied.
 
 #### All together
-	
+
 ```html
 <body>
-	<h1>Hello World!</h1>	
+	<h1>Hello World!</h1>
 	<p>
 		Paragraph
 	</p>
@@ -139,13 +139,13 @@ Nested Relationships:
 - **HREF:**
 <br />
 
-### We Do (Save a file): 
+### We Do (Save a file):
 Lets make a hello world file that shows our name in big bold text and a sub heading of 'Biography' and then a quick little paragraph about yourself.
 
 `$ mkdir classPractice && cd classPractice && subl index.html;`
 
 **CFU: What might this look like? Practice:**
-	
+
 <!-- index.html
 
 <head><title>Hello World!</title></head>
@@ -156,7 +156,7 @@ Lets make a hello world file that shows our name in big bold text and a sub head
 		Biography goes here
 	</p>
 </body>
---> 
+-->
 --
 #### PAUSE: 2min
 --
@@ -176,9 +176,9 @@ Comments can span multiple lines and elements, or anything else for that matter,
 - Unordered List `<ul>`
 - Ordered List `<ol>`
 - List Elements `<li>`
- 
+
  **Example:**
- 
+
  ```html
  	<ul>
  		<li>Item 1</li>
@@ -189,7 +189,7 @@ Comments can span multiple lines and elements, or anything else for that matter,
  		<li>ItemB</li>
  	</ol>
  ```
- 
+
 
 **< Write on desk a list of groceries >**
 
@@ -283,5 +283,3 @@ We use markdown... it's not super important.
 ## 2.1.8 - Lab Blog - 15 min
 ### You Do:
 Write a HTML document that represents your own personal blog using semantic HTML. Focus on structure and include some sample content. Include attributes such as class and id, but do not worry about writing any styling.
-
-**< LGTM >**
