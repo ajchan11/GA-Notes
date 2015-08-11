@@ -119,7 +119,7 @@ Now we have a new problem - we need to link to this stylesheet from our index.ht
 
 Let's link it up, and check it works.
 
-Make a <p> tag with your name and dream job. 
+Make a p tag with your name and dream job. 
 
 Let's muck about with some classes.
 
@@ -188,6 +188,10 @@ li.mammal {
 
 Which is more specific?
 
+The first example selects ALL elements with the class of .mammal.
+
+The second element selects only list items that have the class of .mammal, so it is more specific.
+
 You will see the second kind of CSS every now and again. However, it is not best practice. Generally we want to select any element with a given class, not just one type of element
 
 ---
@@ -234,6 +238,11 @@ What about when we have the ">" sign in our CSS?
 ```
 
 What is the difference between these two?
+
+The first example selects all elements with the class of .burgers that are WITHIN elements that have the class of .best-food
+
+The second example selects all elements with the class of .burgers that are DIRECT DESCENDENTS of elements that have the class of .best-food
+
 
 ## font-weight, font-style, text-decoration, border properties
 Continue to work on your file so that...
