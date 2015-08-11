@@ -31,7 +31,7 @@
 
 HTML tags are style with greater than and less than signs like: `<` `>` We open and close them like so`<p></p>`
 
-**CFU: Give me 7 HTML Tags: one at a time...**
+**CFU: Give me 5 HTML Tags: one at a time...**
 
 --
 #### PAUSE 2 Min
@@ -54,9 +54,7 @@ HTML tags are style with greater than and less than signs like: `<` `>` We open 
 - <head></head>
 - <title></title>
 - <body></body>
-- <script></script>
 - <style></style>
-- <link rel=''/>
 ```
 
 #### Linking / including / importing
@@ -70,9 +68,9 @@ HTML tags are style with greater than and less than signs like: `<` `>` We open 
 ```
 
 #### Nesting
-- When an element contains another element, the contained element is considered to be nested inside the outer element. In the HTML snippet above, the `<title>` element is nested inside of the `<head>` element.
+- When an element contains another element, the contained element is considered to be nested inside the outer element. In the HTML snippet below, the `<title>` element is nested inside of the `<head>` element.
 It is a good practice to indent nested elements. However, the `<head>`, and `<body>` tags are rarely indented despite being children of the `<html>` element.
-Describing Nested Relationships:
+Nested Relationships:
 	- Descendant / Ancestor
 		An element is considered a descendant if it is nested anywhere within its ancestor.
 	- Child / Parent
@@ -98,25 +96,32 @@ Describing Nested Relationships:
 
 ## 2.1.2 - Common Tags & Attributes - 10 min
 #### Common Tags:
- - Headers: `<h1>` `<h2>` `<h3>`
- - Paragraph: `<p>`
- - Active Tag: `<a>`
- - Inline Tag: `<span>`
- - Block Tag: `<div>`
- - Image tags: are used to include an image `<img src="">`
+| Type 		| Tag						| Description                       |
+|------------	|----------------------	|-----------------------------------|
+| Headers 	| `<h1>` `<h2>` `<h3>`	| format header text
+| Paragraph	| `<p>`					| formatting paragraph text
+| Active  	| `<a>`					| linking or actions (usually a CTA)
+| Image 		| `<img src="">` 		| includes an image
+| Inline 		| `<span>` 				| inline text formatting
+| Block 		| `<div>`					| block text 
 	
+#### Span & Div
 `<span>` and `<div>` elements are used to define parts of a document so that they are identifiable when no other HTML element is suitable. Where no existing HTML element is applicable, span and div can valuably represent parts of a document so that HTML attributes such as class or id can be applied.
-	
+
+#### All together
 	
 ```html
-<h1>Hello World!</h1>	
-<p>
-	Paragraph
-</p>
-<span class="redText">small text</span>	
-<div>
-	Block Stuff & Text
-</div>
+<body>
+	<h1>Hello World!</h1>	
+	<p>
+		Paragraph
+	</p>
+	<span class="redText">small text</span>	<img src="profile.jpg" />
+	<div>
+		Block Stuff & Text
+		Linking text to a <a href="">machine</a>
+	</div>
+</body>
 ```
 
 #### Attributes:
@@ -137,30 +142,34 @@ Describing Nested Relationships:
 ### We Do (Save a file): 
 Lets make a hello world file that shows our name in big bold text and a sub heading of 'Biography' and then a quick little paragraph about yourself.
 
+`$ mkdir classPractice && cd classPractice && subl index.html;`
+
 **CFU: What might this look like? Practice:**
 	
-<!--
-index.html
+<!-- index.html
+
 <head><title>Hello World!</title></head>
-<h1>Eric Hodonsky</h1>
-<h2>Biography</h2>
-<p class="context">
-	Biography goes here
-</p>
+	<body>
+	<h1>Eric Hodonsky</h1>
+	<h2>Biography</h2>
+	<p class="context">
+		Biography goes here
+	</p>
+</body>
 --> 
 --
 #### PAUSE: 2min
 --
 <br />
-#### Comments:
 
+#### Comments:
 You can add comments to an HTML document by placing the text inside of a comment tag using the following syntax:
 
 ```html
 <!-- This is a comment -->
 ```
 
-Comments can span multiple lines and elements in a comment tag will not be rendered.
+Comments can span multiple lines and elements, or anything else for that matter, in a comment tag will not be rendered.
 
 ## 2.1.3 - Lists (vertical only till css) - 5 min
 
