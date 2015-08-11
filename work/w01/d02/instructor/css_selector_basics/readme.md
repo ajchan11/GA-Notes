@@ -119,7 +119,7 @@ Now we have a new problem - we need to link to this stylesheet from our index.ht
 
 Let's link it up, and check it works.
 
-Make a p tag with your name and dream job. 
+Make a "p" tag with your name and dream job. 
 
 Let's muck about with some classes.
 
@@ -181,6 +181,7 @@ What is the difference between these two samples of CSS?
 	color: pink;
 }
 
+
 li.mammal {
 	color: pink
 }
@@ -188,11 +189,7 @@ li.mammal {
 
 Which is more specific?
 
-The first example selects ALL elements with the class of .mammal.
-
-The second element selects only list items that have the class of .mammal, so it is more specific.
-
-You will see the second kind of CSS every now and again. However, it is not best practice. Generally we want to select any element with a given class, not just one type of element
+You will see the second kind of CSS every now and again. However, it is not best practice. Generally we want to select any element with a given class, not just one type of element. 
 
 ---
 
@@ -239,9 +236,10 @@ What about when we have the ">" sign in our CSS?
 
 What is the difference between these two?
 
-The first example selects all elements with the class of .burgers that are WITHIN elements that have the class of .best-food
+The first example selects all elements with the class of .burger that are WITHIN elements with the class of .best-food;
 
-The second example selects all elements with the class of .burgers that are DIRECT DESCENDENTS of elements that have the class of .best-food
+
+The second example selects all elements with the class of .burger that are DIRECT DESCENDENTS of elements with the class of .best-food;
 
 
 ## font-weight, font-style, text-decoration, border properties
@@ -266,17 +264,6 @@ Here are some cool pseudo-classes:
 :focus (mainly used in forms to tell you when something is ready for keyboard input)
 
 ```
-
-
-##A bit more on selector specificity
-
-```
- 0  -    0    -  0
-id  -  class  -  tag
-```
-
-For each selection, you can add up a score to see how specific that selection is. 
-
 
 ## Last thing! CSS reset and CSS normalize
 
