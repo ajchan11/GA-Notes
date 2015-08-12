@@ -43,6 +43,7 @@ What is a common term used to describe 'encapsulated' data and operations in pro
 - Mutable vs Imutable properties (locking properties and objects in JS)
 - Methods and properties are basically functions and variables that are explicitly part of the encapsulated code.
 - JS has Object (function), Object (literal: what we're coving today), and ES6 is getting Object (class) as well. Something for later on...
+	- Objects litterals are like a key-value stores version of an array
 	- Object literal is a comma separated list of key-value pairs wrapped in curly braces. A value can be a method.
 
 ```javascript
@@ -64,13 +65,19 @@ var person = {
 #### Looking at Object Properties & Methods
 
 ```JS
-//note, this style is to fit the page, not a styling best practice
 var movie = { 
-	title: "Ex-Machina" , 
-	director: "Alex Garland", 
-	actors: ["Alicia Vikander","Domhnall Gleeson","Oscar Isaac"]
-};
+		title: "Ex-Machina" , 
+		director: "Alex Garland", 
+		actors: ["Alicia Vikander","Domhnall Gleeson","Oscar Isaac"]
+	};
 
+// Access to properties via dot (.) notation
+console.log( movie.title );
+
+// Access to properties via bracket(["key"]) notation
+console.log( movie["title"] );
+
+// Get all properties/methods and values
 for(var key in movie){
    console.log("key: " + key + "   value: " + movie[key]);
 }   
@@ -83,8 +90,14 @@ for (var i = 0; i < keys.length; i++) {
 }
 ```
 
+- Also if you can't enumerate over them, you can still get a list of properties via:
+
+```js
+Object.getOwnPropertyNames();
+```
+
 #### Locking properties on an object literal
-Is it always so easy to do this...add and remove properties for an object on a whim? More importantly...do we always want the ability to do this? Are there times when we want to lock down an object so to speak..and prevent these types of runtime modifications? It turns out that javascripts dynamic nature can make it unweildy at times, and that it's nice to has the ability to prevent our objects from being tampered with.
+Is it always so easy to do this...add and remove properties for an object literal on a whim? More importantly...do we always want the ability to do this? Are there times when we want to lock down an object so to speak..and prevent these types of runtime modifications? It turns out that javascripts dynamic nature can make it unweildy at times, and that it's nice to has the ability to prevent our object literals from being tampered with.
 
 First, let's take note of the three attributes we can use to control the accessibility of our objects properties
 
@@ -131,11 +144,11 @@ Object.isExtensible(movie); //output: true
 
 There are a few ways that we can prevent movie from being extended:
 
-`Object.preventExtensions(anObj)`
+`Object.preventExtensions(movie)`
 
-`Object.seal(anObj)`
+`Object.seal(movie)`
 
-`Object.freeze(anObj)`
+`Object.freeze(movie)`
 
 *In turn you can check if an object is in one of these states with:*
 
@@ -192,12 +205,12 @@ course.name = 'Math'
 course.name  //output: 'Math'
 ```
 
-#### .freeze()
+#### .freeze();
 
 Freeze is a layer of restriction on top of what seal does, so it will do everything that seal will do and additional prevent any properties from being written to. It basically snapshots an objects state at the instance it is called, preventing modifications to anything, including properties already defined, whether or not they were previously writable or not.
 
 ```js
-var course  = { name: 'History, professor : 'Dr. Smith'}
+var course  = { name: 'History', professor : 'Dr. Smith'}
 Object.freeze(course);
 course.name = 'Math';  //this will fail
 ```
@@ -205,4 +218,4 @@ course.name = 'Math';  //this will fail
 ## Lab - 15 min
 Make yourself as an object, give yourself properties and methods, make your haircolor mutable, make your eye color not mutable and both of them  not enumerable. A method that should return wether you're smiling or not, and a property of isSmiling that can be set, and is `enumerable` and `writable`
 
-Bonus: M
+Dump all the object properties by 'enumerable' 'writable' and 'configurable', group and echo them together.
