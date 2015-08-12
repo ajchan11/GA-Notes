@@ -11,26 +11,41 @@
 
 **Objectives** *SWBAT:*
 
- - Describe encapsulation so they can apply it to objects - Use J.S. Objects to create reusable encapsulated code## 3.3.1 - Review - 5 min
+ - Describe encapsulation so they can apply it to objects
+ - Use J.S. Objects to create reusable encapsulated code
 
- - Variables (stores data) - functions (operates on data)
+## 3.3.1 - Review - 5 min
+
+ - Variables (stores data)
+ - functions (operates on data)
 
 ## 3.3.2 - Ecapsulation - 20 min
 We're about to talk about encapsulation, what that means, and how it relates to objects in programming. Object Oriented programming can allow for much cleaner, easier to understand code, while also offering up things like polymorphism and inheritance which we'll cover later. These techniques bound with encapsulation can make for great abstraction and more digestible code
 
 **< Think Pair Share (3min): Discuss 'encapsulation' in the real world >**
 
-Paired answers - on the white board### I DO - 15 min
+Paired answers - on the white board
+
+### I DO - 15 min
 Define `Encapsulation`:
 
- - Packing of data into a single component. - Encapsulation also can allow the programmer to restrict access to properties and methods that have been bundled to operate on the data. This is a bit more tricky with JS than most other languages, so we'll cover those specifics in another lesson.
+ - Packing of data into a single component.
+ - Encapsulation also can allow the programmer to restrict access to properties and methods that have been bundled to operate on the data. This is a bit more tricky with JS than most other languages, so we'll cover those specifics in another lesson.
 
-Ideas for encapsulation?- WB: Draw garden circle, give properties + methods (dirtType, location, waterLevel, hasWater, needsWater)- WB: 'Tom' (who is Tom? What are his/her properties)
-### We Do - 5 min**< Draw & Share (whip around - 3 min): lets diagram a User together. >**
-- Draw a user diagram on your desk of what you may want encapsulated within a user
-<!-- Build user encapsulation on white board w/ responses-->
+Ideas for encapsulation?
+- WB: Draw garden circle, give properties + methods (dirtType, location, waterLevel, hasWater, needsWater)
+- WB: 'Tom' (who is Tom? What are his/her properties)
+### We Do - 5 min
+**< Draw & Share (whip around - 3 min): lets diagram a User together. >**
 
-**< Define in your own words 'encapsulation' somewhere on the white board >**## 3.3.3 - Objects 25 min
+- Draw a user diagram on your desk of what you may want encapsulated within a user
+
+<!-- Build user encapsulation on white board w/ responses-->
+
+**< Define in your own words 'encapsulation' somewhere on the white board >**
+
+
+## 3.3.3 - Objects 25 min
 Segway from encapsulation:
 
 What is a common term used to describe 'encapsulated' data and operations in programming?
@@ -43,6 +58,7 @@ What is a common term used to describe 'encapsulated' data and operations in pro
 - Mutable vs Imutable properties (locking properties and objects in JS)
 - Methods and properties are basically functions and variables that are explicitly part of the encapsulated code.
 - JS has Object (function), Object (literal: what we're coving today), and ES6 is getting Object (class) as well. Something for later on...
+	- Objects litterals are like a key-value stores version of an array
 	- Object literal is a comma separated list of key-value pairs wrapped in curly braces. A value can be a method.
 
 ```javascript
@@ -52,7 +68,9 @@ var person = {
       return this.age;
     }
 }
-```<!-- draw up an object literal --><!-- note the use of the keyword 'new' will throw an error -->
+```
+<!-- draw up an object literal -->
+<!-- note the use of the keyword 'new' will throw an error -->
 
 ### We Do - 5 min
 **< Turn and Talk (3 min) : Why with what we know about programming, why might this not always be the solution. >**
@@ -64,13 +82,19 @@ var person = {
 #### Looking at Object Properties & Methods
 
 ```JS
-//note, this style is to fit the page, not a styling best practice
 var movie = { 
-	title: "Ex-Machina" , 
-	director: "Alex Garland", 
-	actors: ["Alicia Vikander","Domhnall Gleeson","Oscar Isaac"]
-};
+		title: "Ex-Machina" , 
+		director: "Alex Garland", 
+		actors: ["Alicia Vikander","Domhnall Gleeson","Oscar Isaac"]
+	};
 
+// Access to properties via dot (.) notation
+console.log( movie.title );
+
+// Access to properties via bracket(["key"]) notation
+console.log( movie["title"] );
+
+// Get all properties/methods and values
 for(var key in movie){
    console.log("key: " + key + "   value: " + movie[key]);
 }   
@@ -83,8 +107,14 @@ for (var i = 0; i < keys.length; i++) {
 }
 ```
 
+- Also if you can't enumerate over them, you can still get a list of properties via:
+
+```js
+Object.getOwnPropertyNames();
+```
+
 #### Locking properties on an object literal
-Is it always so easy to do this...add and remove properties for an object on a whim? More importantly...do we always want the ability to do this? Are there times when we want to lock down an object so to speak..and prevent these types of runtime modifications? It turns out that javascripts dynamic nature can make it unweildy at times, and that it's nice to has the ability to prevent our objects from being tampered with.
+Is it always so easy to do this...add and remove properties for an object literal on a whim? More importantly...do we always want the ability to do this? Are there times when we want to lock down an object so to speak..and prevent these types of runtime modifications? It turns out that javascripts dynamic nature can make it unweildy at times, and that it's nice to has the ability to prevent our object literals from being tampered with.
 
 First, let's take note of the three attributes we can use to control the accessibility of our objects properties
 
@@ -131,11 +161,11 @@ Object.isExtensible(movie); //output: true
 
 There are a few ways that we can prevent movie from being extended:
 
-`Object.preventExtensions(anObj)`
+`Object.preventExtensions(movie)`
 
-`Object.seal(anObj)`
+`Object.seal(movie)`
 
-`Object.freeze(anObj)`
+`Object.freeze(movie)`
 
 *In turn you can check if an object is in one of these states with:*
 
@@ -192,12 +222,12 @@ course.name = 'Math'
 course.name  //output: 'Math'
 ```
 
-#### .freeze()
+#### .freeze();
 
 Freeze is a layer of restriction on top of what seal does, so it will do everything that seal will do and additional prevent any properties from being written to. It basically snapshots an objects state at the instance it is called, preventing modifications to anything, including properties already defined, whether or not they were previously writable or not.
 
 ```js
-var course  = { name: 'History, professor : 'Dr. Smith'}
+var course  = { name: 'History', professor : 'Dr. Smith'}
 Object.freeze(course);
 course.name = 'Math';  //this will fail
 ```
@@ -205,4 +235,4 @@ course.name = 'Math';  //this will fail
 ## Lab - 15 min
 Make yourself as an object, give yourself properties and methods, make your haircolor mutable, make your eye color not mutable and both of them  not enumerable. A method that should return wether you're smiling or not, and a property of isSmiling that can be set, and is `enumerable` and `writable`
 
-Bonus: M
+Bonus: Find all the object properties by 'enumerable' 'writable' and 'configurable' groups and echo them as such.
