@@ -11,26 +11,41 @@
 
 **Objectives** *SWBAT:*
 
- - Describe encapsulation so they can apply it to objects - Use J.S. Objects to create reusable encapsulated code## 3.3.1 - Review - 5 min
+ - Describe encapsulation so they can apply it to objects
+ - Use J.S. Objects to create reusable encapsulated code
 
- - Variables (stores data) - functions (operates on data)
+## 3.3.1 - Review - 5 min
+
+ - Variables (stores data)
+ - functions (operates on data)
 
 ## 3.3.2 - Ecapsulation - 20 min
 We're about to talk about encapsulation, what that means, and how it relates to objects in programming. Object Oriented programming can allow for much cleaner, easier to understand code, while also offering up things like polymorphism and inheritance which we'll cover later. These techniques bound with encapsulation can make for great abstraction and more digestible code
 
 **< Think Pair Share (3min): Discuss 'encapsulation' in the real world >**
 
-Paired answers - on the white board### I DO - 15 min
+Paired answers - on the white board
+
+### I DO - 15 min
 Define `Encapsulation`:
 
- - Packing of data into a single component. - Encapsulation also can allow the programmer to restrict access to properties and methods that have been bundled to operate on the data. This is a bit more tricky with JS than most other languages, so we'll cover those specifics in another lesson.
+ - Packing of data into a single component.
+ - Encapsulation also can allow the programmer to restrict access to properties and methods that have been bundled to operate on the data. This is a bit more tricky with JS than most other languages, so we'll cover those specifics in another lesson.
 
-Ideas for encapsulation?- WB: Draw garden circle, give properties + methods (dirtType, location, waterLevel, hasWater, needsWater)- WB: 'Tom' (who is Tom? What are his/her properties)
-### We Do - 5 min**< Draw & Share (whip around - 3 min): lets diagram a User together. >**
-- Draw a user diagram on your desk of what you may want encapsulated within a user
-<!-- Build user encapsulation on white board w/ responses-->
+Ideas for encapsulation?
+- WB: Draw garden circle, give properties + methods (dirtType, location, waterLevel, hasWater, needsWater)
+- WB: 'Tom' (who is Tom? What are his/her properties)
+### We Do - 5 min
+**< Draw & Share (whip around - 3 min): lets diagram a User together. >**
 
-**< Define in your own words 'encapsulation' somewhere on the white board >**## 3.3.3 - Objects 25 min
+- Draw a user diagram on your desk of what you may want encapsulated within a user
+
+<!-- Build user encapsulation on white board w/ responses-->
+
+**< Define in your own words 'encapsulation' somewhere on the white board >**
+
+
+## 3.3.3 - Objects 25 min
 Segway from encapsulation:
 
 What is a common term used to describe 'encapsulated' data and operations in programming?
@@ -53,7 +68,9 @@ var person = {
       return this.age;
     }
 }
-```<!-- draw up an object literal --><!-- note the use of the keyword 'new' will throw an error -->
+```
+<!-- draw up an object literal -->
+<!-- note the use of the keyword 'new' will throw an error -->
 
 ### We Do - 5 min
 **< Turn and Talk (3 min) : Why with what we know about programming, why might this not always be the solution. >**
@@ -218,4 +235,4 @@ course.name = 'Math';  //this will fail
 ## Lab - 15 min
 Make yourself as an object, give yourself properties and methods, make your haircolor mutable, make your eye color not mutable and both of them  not enumerable. A method that should return wether you're smiling or not, and a property of isSmiling that can be set, and is `enumerable` and `writable`
 
-Dump all the object properties by 'enumerable' 'writable' and 'configurable', group and echo them together.
+Bonus: Find all the object properties by 'enumerable' 'writable' and 'configurable' groups and echo them as such.
