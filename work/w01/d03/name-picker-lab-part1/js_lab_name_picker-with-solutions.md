@@ -1,9 +1,7 @@
 #JS Name-Picker Lab (part 1)
 ---
 
-Today we are going to lay down the groundwork for making a cool and simple front end app that randomly picks a string from an array. We can use this as a random name picker during class! It will be built in Vanilla Javascript, HTML and CSS. 
-
-Here is an example of one for [WDI 17](http://wdi-17-picker.bitballoon.com/)
+Today we are going to lay down the groundwork for making a cool and simple front end app that randomly picks a string from an array. We can use this as a random name picker during class! It will be built in Javascript, HTML and CSS. 
 
 
 ## Setup
