@@ -11,10 +11,11 @@ https://www.youtube.com/watch?v=5kTvLVRXcJs
 
 
 ##Let's make a function!
-
+```
 function helloWorld(){
 	alert("Hello, world");
 }
+```
 
 there are 3 important parts to know:
 1) the function keyword
@@ -64,7 +65,7 @@ This variable called favoriteColor that we just defined has GLOBAL scope. It can
 What happens if we leave the 'var' keyword out?<br>
 The browser assumes that it is a global variable. For that reason, whenever we define a new variable, we always put 'var' first. We don't want a lot of global variables if we don't need them. 
 
-* TASK TWO: Inside your showColor function, define a new variable called secondFavoriteColor and set it to red. Try console logging it from within the function, and then try console logging it from outside the function. What happens?
+* TASK TWO<br>Inside your showColor function, define a new variable called secondFavoriteColor and set it to red. Try console logging it from within the function, and then try console logging it from outside the function. What happens?
 
 ## What is 'local' scope?
 Local scope is anything that is smaller than the global scope. We create a new local scope by making a function. 
