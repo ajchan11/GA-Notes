@@ -280,25 +280,3 @@ Please fix it.
 * Arg! I keep getting errors! Why does line 8 not work here? http://repl.it/mVA/7
 * Explain why the animal variable sometimes refers to the gorilla, and sometimes refers to the puppy http://repl.it/mVA/8
 * remove a single word from the previous code so that the puppy waves, not the gorilla. 
-
-
-###Extra party bonus - the "scope chain":
-
-What will this output, and why?
-```
-function b(){
-	console.log(myVar);
-}
-
-function a(){
-	var myVar = 2;
-	b();
-}
-
-var myVar = 1;
-
-a();
-```
-
-
-
