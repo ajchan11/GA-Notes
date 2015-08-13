@@ -7,7 +7,7 @@
 | Review 					| 5 min		| 3.3.1 - Review
 | Encapsulation			| 20 min 		| 3.3.2 - Ecapsulation
 | Objects					| 40 min		| 3.3.3 - Object Literals
-| Lab						| 15 min		| 3.3.4 - Object 'ME'
+| Mini-Lab						| 15 min		| 3.3.4 - Object 'ME'
 
 **Objectives** *SWBAT:*
 
@@ -26,7 +26,7 @@ We're about to talk about encapsulation, what that means, and how it relates to 
 
 Paired answers - on the white board
 
-### I DO - 15 min
+### I DO - 10 min
 Define `Encapsulation`:
 
  - Packing of data into a single component.
@@ -41,7 +41,7 @@ Ideas for encapsulation?
 - Draw a user diagram on your desk of what you may want encapsulated within a user
 
 <!-- Build user encapsulation on white board w/ responses-->
-
+### You Do - 5 min
 **< Define in your own words 'encapsulation' somewhere on the white board >**
 
 
@@ -72,8 +72,6 @@ var person = {
 <!-- draw up an object literal -->
 <!-- note the use of the keyword 'new' will throw an error -->
 
-### We Do - 5 min
-**< Turn and Talk (3 min) : Why with what we know about programming, why might this not always be the solution. >**
 
 <!-- reusability / inheritance, you can re-use or point to the same variable or object but not copy. copy by reference -->
 
