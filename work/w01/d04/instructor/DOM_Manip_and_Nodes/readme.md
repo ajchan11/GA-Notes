@@ -4,9 +4,9 @@
 | **Section**          	| **Timing** 	|        **Summary**                  
 |----------------------	|------------	|---------------------
 | Review 					| 5 min		| 4.3.1 - HTML/CSS & Inputs
-| DOM & Nodes				| 20 min 		| 4.3.2 -
-| Selecting Nodes		| 15 min		| 4.3.3 -
-| Create Nodes 			| 15 min		| 4.3.4 - createElement vs string html
+| DOM & Nodes				| 20 min 		| 4.3.2 - What is the DOM
+| Selecting Nodes		| 15 min		| 4.3.3 - 'pick me'
+| Create Nodes 			| 15 min		| 4.3.4 - createElement vs string html append
 | Events					| 15 min		| 4.3.5 - Events and Delegation
 | Conclusion				| 5 min		| 4.3.6 - Try it & conclusion
 
