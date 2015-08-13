@@ -105,8 +105,10 @@ Here is an example of one for [WDI 17](http://wdi-17-picker.bitballoon.com/)
 2. create a FUNCTION "eachName" that `console.log` **each** string **individually** from that array. 
 
 	```
+	    var i = 0;
 	    function eachName(){
 	      console.log(wdi_18_names[i]);
+	      i++;
 	    }
 	```
 	
@@ -131,12 +133,9 @@ Here is an example of one for [WDI 17](http://wdi-17-picker.bitballoon.com/)
 	Now when you call `eachName()` it should return a random name from the array	
 	
 	```
-	  var i = 0;
 	    function eachName(){
 	    	var namePicker = wdi_18_names[Math.floor(Math.random() * wdi_18_names.length)];
 			console.log(namePicker);
-	      
-	      i ++; 
 	    }
 	    
 	```
