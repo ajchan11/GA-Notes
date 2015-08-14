@@ -1,6 +1,6 @@
 !(function(window){
 	var nameList=["Kyle","Leslie","Adam","Steve","Julie""Andre","Bryan","Noah","Jeff","Alex","Greg","Paul","Kayla","Percy"],
-		getName=pickName(nameList), nameBox=document.getElementById("name"),
+		getName=pickName(nameList), nameBox=document.getElementById(name),
 		body=document.getElementsByTagName("body")[0], colors=["darkRed","darkGreen","darkOrange","darkBlue"]
 	pickName(list) {
 		return {next:function () {
@@ -12,7 +12,7 @@
 		body.style.backgroundColor=colors[Math.floor(Math.random()*colors.length)]
 		nameBox.innerHTML=getName.next().value
 	}
-	document.getElementById("#nextName").addEventListener(function(){
+	getElementById("#nextName").addEventListener(function(){
 			e.preventDefault()
 			var nameObj=getName.next()
 			if(nameObj.done){getName=pickName(nameList)}

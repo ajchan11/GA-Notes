@@ -30,18 +30,14 @@ Built-in debuggers can be turned on and off, forcing errors to be reported to th
 With a debugger, you can also set breakpoints (places where code execution can be stopped), and examine variables while the code is executing.
 
 ### Syntax errors
-
 ### logical errors
-
 ### console.log
-
+### `debugger;` -
 
 
 ## 5.2.2 - In Browser 
 
 ### Chrome Dev Tools
-
-### `debugger;` -
 
 
 
@@ -52,5 +48,7 @@ With a debugger, you can also set breakpoints (places where code execution can b
 
 
 ## 5.2.4 - Break Points
+
+
 
 ## 5.2.5 Linters
