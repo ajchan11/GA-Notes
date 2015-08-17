@@ -15,7 +15,7 @@
 - Explain the concept of a 'callback'
 - Describe the difference between asynchronous and synchronous program execution, and why callbacks are important to asynchronous program flow
 - Explain the difference between referencing and invoking a function.
-- Describe what an anonymous function is and when you would use one
+- Describe what an labda (anonymous function) is and when you would use one
 - Explain Javascript 'context' and what the value of the 'this' keyword refers to
 - Explain what the default context of Javascript executing in the browser is.
 - Pass a named function as a callback to another function
@@ -28,17 +28,24 @@ Javascript treats functions as first class objects. Which means that it supports
 
 **More simply put: JavaScript treats functions as variables.**
 
-Essentially they'res just a special object that can do all the things a regular object can do.
+Essentially they're just a special object that can do all the things a regular object can do plus more.
 
-[Function is an instance of Object](http://repl.it/BCGC)
+[Function is an instance of Object](http://repl.it/BCGC/1)
 
 ## 6.3.2 - Referencing vs. Invoking a function - 10 min
 
+
+
 ### Referencing
+When you leverage the name of the funciton to set the function to a variable, or pass the function allong as a variable to another function or method
+
 - [You can store a function in a variable](http://repl.it/BCGJ)
 - [Pass a function as an argument to another function](http://repl.it/BCGL/1)
 
 ### Invoking
+You have already learned that the code inside a JavaScript function will execute when "something" invokes it.
+
+The code in a function is not executed when the function is defined. It is executed when the function is invoked.
 
 > CFU: Pair up, make a repl.it, first driver should make a function `doubler` that takes in a single number argument and doubles it. SWITCH. Second driver try to invoke this funciton and make it break with a string, now fix the function so it logs an error if the `typeof` is not a number
 
@@ -87,7 +94,11 @@ Context is most often determined by how a function is invoked. When a function i
 
 ![Execution context](https://cdn.pbrd.co/images/2N0GvGWO.png)
 
-#### The Scope Chain
+### The Scope Chain
+
+> Remember: Lets do some REPL.ITs
+
+####[Quick Practices](https://github.com/ga-students/WDI_LA_18/tree/master/work/w01/d05/instructor/morning_warmup)
 
 For each execution context there is a scope chain coupled with it. The scope chain contains the variable object for every execution context in the execution stack. It is used for determining variable access and identifier resolution. For example:
 
@@ -113,7 +124,6 @@ first();
 
 [Context Examples](http://repl.it/BCGd/1)
 
-> CFU: Lets do some REPL.ITs
 
 ## 6.3.5 - Passing named functions or lambdas as callBacks
 
@@ -139,12 +149,12 @@ first();
 ## LAB 6.4 - callBack heaven
 
 ### Regular callBacks
-Copy these snippets into a repl.it and solve..
+Copy these snippets from class repo into a repl.it and solve..
 
-[`exersize_1/index.js`]()
-<br />
-[`exersize_2/index.js`](http://repl.it/BCMS/2)
+`work/w02/d01/instructor/callBacks/exersize_1/index.js`<br />
+`work/w02/d01/instructor/callBacks/exersize_2/index.js`
 
+<!-- http://repl.it/BCMS/2 second answer -->
 
 
 ### Bonus: Events callBacks
