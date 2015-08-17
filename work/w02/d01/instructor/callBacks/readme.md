@@ -12,7 +12,7 @@
 
 
 ### SWBAT: 
-- Explain the concept of a 'callback' and how we can pass functions as arguments to other functions
+- Explain the concept of a 'callback'
 - Describe the difference between asynchronous and synchronous program execution, and why callbacks are important to asynchronous program flow
 - Explain the difference between referencing and invoking a function.
 - Describe what an anonymous function is and when you would use one
@@ -32,17 +32,17 @@ Essentially they'res just a special object that can do all the things a regular 
 
 [Function is an instance of Object](http://repl.it/BCGC)
 
-## 6.3.2 - Referencing vs. Invoking a function
+## 6.3.2 - Referencing vs. Invoking a function - 10 min
 
 ### Referencing
 - [You can store a function in a variable](http://repl.it/BCGJ)
-- [Pass a function as an argument to another function](http://repl.it/BCGL)
+- [Pass a function as an argument to another function](http://repl.it/BCGL/1)
 
 ### Invoking
 
-> CFU: Lets make some functions and run them
+> CFU: Pair up, make a repl.it, first driver should make a function `doubler` that takes in a single number argument and doubles it. SWITCH. Second driver try to invoke this funciton and make it break with a string, now fix the function so it logs an error if the `typeof` is not a number
 
-## 6.3.3 - Lambdas / Anonymous Functions
+## 6.3.3 - Lambdas / Anonymous Functions - 10 min
 
 [An anonymous function is a function without a name](http://repl.it/BCGO)
 
@@ -51,7 +51,7 @@ For Example:
 
 ```js
 function foo(msg){
-    alert(msg);
+    console.log(msg);
 }
 ```
 
@@ -59,7 +59,7 @@ Is the same as:
 
 ```js
 var foo = function (msg) {
-    alert(msg);
+    console.log(msg);
 }
 ```
 This is why I prefer declaring or defining functions by assignment, as well as it forces you to manually hoist your functions so they're available when you want them to run. This makes it less work for the interpreting of JavaScript as it doesn't have to hoist for you.
@@ -84,6 +84,9 @@ Context is most often determined by how a function is invoked. When a function i
 	- From there the scope chain is initialized next, and the value of this is determined last. Then in the execution phase, code is interpreted and executed.
 
 
+
+![Execution context](https://cdn.pbrd.co/images/2N0GvGWO.png)
+
 #### The Scope Chain
 
 For each execution context there is a scope chain coupled with it. The scope chain contains the variable object for every execution context in the execution stack. It is used for determining variable access and identifier resolution. For example:
@@ -91,23 +94,26 @@ For each execution context there is a scope chain coupled with it. The scope cha
 ```javascript
 // Global Context
 function first(){ //Execution Context
-    second();
-    function second(){ //Execution Context
-        third();
-        function third(){ //Execution Context
-            fourth();
-            function fourth(){ //Execution Context
-                // do something
-            }
-        }
-    }   
+	second();
+	console.log( "First" );
+	function second(){ //Execution Context
+		console.log( "Second" );
+		third();
+		function third(){ //Execution Context
+			fourth();
+			console.log( "Third" );
+			function fourth(){ //Execution Context
+	            console.log( "Fourth" );
+	   		}
+	   }
+	}   
 }
 first();
 ```
 
-[Context Examples](http://repl.it/BCGd)
+[Context Examples](http://repl.it/BCGd/1)
 
-> CFU: Ask John for his scope lesson
+> CFU: Lets do some REPL.ITs
 
 ## 6.3.5 - Passing named functions or lambdas as callBacks
 
@@ -115,9 +121,12 @@ first();
 
 ### Event Listeners
 
-[Named event listeners]()
-[Lambda event listeners]()
+[Named event listeners](http://codepen.io/relicmelex/pen/QbRgWX?editors=101)
+<br />
+[Lambda event listeners](http://codepen.io/relicmelex/pen/NqVgWm?editors=101)
 
+
+<br /><br />
 
 > callBacks IYOW:
 
@@ -130,11 +139,18 @@ first();
 ## LAB 6.4 - callBack heaven
 
 ### Regular callBacks
- `exersize_1/index.js`
+Copy these snippets into a repl.it and solve..
+
+[`exersize_1/index.js`]()
 <br />
- `exersize_2/index.js`
+[`exersize_2/index.js`](http://repl.it/BCMS/2)
 
 
-### Events callBacks
- `exersize_3/index.js`
+
+### Bonus: Events callBacks
+... then make a local directory and place the `index.html` and `script.js` in there from the exersize_3 folder.
+Link the script and style files into the html document and follow the instructions in `script.js`
+This should end up being a submitting form to itself that validates data following the rules in `script.js`
+
+`exersize_3/script.js` & `exersize_3/index.html`
 
