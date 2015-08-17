@@ -118,7 +118,7 @@ if(boolean expression) {
 ```
 if(boolean expression) { 
   // some good code 
-} else if {
+} else if(another boolean expression){
   // some good code
 } else {
   // some more good code
