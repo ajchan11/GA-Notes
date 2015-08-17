@@ -1,8 +1,14 @@
 # 6.3 - JavaScript callBacks
 
-### roadmap
-
-
+### Roadmap
+| **Section**          				| **Timing** |        **Summary**                  
+|--------------------------------	|------- |---------------------
+| Review 								| 5 min  | 6.3.0 - Functions
+| Basic Concepts						| 10 min | 6.3.1 - First Class Objects
+| Practice							| 10 min | 6.3.2 - Referencing vs. Invoking
+| UnNamed functions					| 10 min | 6.3.3 - Lambdas / Anonymous 
+| Advanced scope						| 25 min | 6.3.4 - Context & Scope & `this`
+| Asynchronous & Event Listeners	| 15 min | 6.3.5 - Passing named functions or lambdas as callBacks
 
 
 ### SWBAT: 
@@ -17,7 +23,7 @@
 
 
 
-## 6.3.1 - Functions: First Class Objects
+## 6.3.1 - Functions: First Class Objects (10 min)
 Javascript treats functions as first class objects. Which means that it supports creating new functions as a program runs, storing them in data structures, passing them as arguments to other functions, and returning them as values.
 
 **More simply put: JavaScript treats functions as variables.**
@@ -26,9 +32,7 @@ Essentially they'res just a special object that can do all the things a regular 
 
 [Function is an instance of Object](http://repl.it/BCGC)
 
-[You can also store a funciton in a variable](BCGO)
-
-## 6.3.3 - Referencing vs. Invoking a function
+## 6.3.2 - Referencing vs. Invoking a function
 
 ### Referencing
 - [You can store a function in a variable](http://repl.it/BCGJ)
@@ -36,15 +40,12 @@ Essentially they'res just a special object that can do all the things a regular 
 
 ### Invoking
 
+> CFU: Lets make some functions and run them
 
-
-
-
-
-
-## 6.3.4 - Lambdas / Anonymous Functions
+## 6.3.3 - Lambdas / Anonymous Functions
 
 [An anonymous function is a function without a name](http://repl.it/BCGO)
+
 When you call `function(){}`, it's returning a function object that is invoked and the body is executed
 For Example:
 
@@ -66,7 +67,9 @@ This is why I prefer declaring or defining functions by assignment, as well as i
 - [Returning anonymous functions](http://repl.it/BCGk)
 - [Predicating](http://repl.it/BCGp)
 
-## 6.3.5 - Context vs. Scope & `this`
+> CFU: We've already used these where? (events)
+
+## 6.3.4 - Context & Scope & `this`
 Context is most often determined by how a function is invoked. When a function is called as a method of an object, this is set to the object the method is called on.
 
 ### Default Context
@@ -104,7 +107,9 @@ first();
 
 [Context Examples](http://repl.it/BCGd)
 
-## 6.3.6 - Passing named functions or lambdas as callBacks
+> CFU: Ask John for his scope lesson
+
+## 6.3.5 - Passing named functions or lambdas as callBacks
 
 [Asynchronous Functions](http://repl.it/BCGS)
 
@@ -122,7 +127,7 @@ first();
 
 <br /><br />
 
-## LAB 6.4 - callBacks
+## LAB 6.4 - callBack heaven
 
 ### Regular callBacks
  `exersize_1/index.js`
