@@ -1,14 +1,15 @@
 #Closures
 
-###Objectives
+###SWBAT
+* Explain what a closure is
+* Build a simple closure
+* Use closures to build and return other functions
 
-
-In order to understand closures, we need to be absolutely sure that we uderstand two things really well:
+In order to understand closures, we need to be absolutely sure that we understand two things really well:
 
 1) Scope
 
 2) Treating functions as objects that can passed around.
-
 
 
 ###1) Let's make sure we understand scope
@@ -158,29 +159,77 @@ doubler(5);
 - Use this function to create two new functions - "tripler" and "quadrupler".
 
 
+###Real world closures:
+
+###Example 1 - counters:
+
+This one seems to pop up in interviews quite a bit - it's a classic example to illustrate closures.
+
+The task starts as follows (hint - I like to write it in repl.it, and then copy/paste into my console so I can repeatedly call each function):
+
+- Make a variable called count, and set it equal to 0. Then write a function that increments this variable, and console logs it.
+
+- That's great, but now I want a function that MAKES counter functions for me. I want to count several different things at the same time. 
 
 
-	**15 Minutes**
-	
-	Create a function called called addNum. Create a global variable called num1 with a number 10. Inside the addNum function, there is a variable num2 defined as 5. Use a closure called sumNum and inside here is a variable num3. Use the closure to add them up and return the sum.
-	
-	Get up and explain to someone in class why this is a closure.
 
+###Example 2 - functions inside for loops:
 
+This is enough to make you want to quit programming forever, so we will not cover this in the lesson.
 
-###Principle of Least Privilege
+Let's say we wanted to sequentially print out the numbers 0 to 10 using a for loop:
 
-	You should always use private variables in JavaScript and Ruby. Unless there is a huge need for it, don't use it because it can a) pollute your namespace 2) . The need for closures come from a need to access those variables outside of the scope. For example, if a user entered in an input and it goes into a private variable, they still want to be able to access it. Closures allow that. For example:
-	
-	function setAnswer(answer){
-		var answer = answer;
-		function getAdjustedAnswer(){
-			answer = answer / 10;
-			return answer;
-		}
-		return getAjustedAnswer();
-	}
+```
+for(var i = 0; i < 10; i++) {
+    console.log(i);    
+}
+```
+
+Now let's say you want to print out the numbers, but with a gap of a second between each one.
+
+Typically, we would use the setTimeout function for this.
+
+It works like this:
+```
+setTimeout(function(){
+	console.log("Was this worth the wait?")
+}, 3000)
+```
+
+So, intuitively, this is how we might write our for loop:
+
+```
+for(var i = 0; i < 10; i++) {
+    setTimeout(function() {
+      console.log(i);  
+    }, 1000*i);
+}
+```
+Now we are saying please console.log whatever the value of "i" is.
+
+The problem is that the variable i, within each of the anonymous functions, is bound to the same variable outside of the function, the global variable "i".
+
+After the loop terminates, the global variable i has the value of 10, and that's what the function 'sees'
+
+What we want to do is bind the variable within each function to a separate, unchanging value outside of the function. Within the for loop, for each value of i, we need to immediately execute a function that returns another function that is bound to this current value of i. That's what this code does:
+
+```
+for (var i = 0; i < 10; i++) {
+    setTimeout(function(i) { 
+        return function() { 
+            console.log(i); 
+        }; 
+    }(i), 1000*i);
+}
+```
 
 ###Activity:
 
-	Write down why you want to use a use a closure (2 min) and explain to the person next to you.
+Write down what a closure is, and why you want to use one (2 min) and explain to the person next to you.
+
+
+
+------
+Appendix
+
+Counter repl.it: https://repl.it/BCS9
