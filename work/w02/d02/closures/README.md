@@ -30,6 +30,7 @@ function showAmount(){
 
 Let's draw the scoping of the variables;
 
+
 ###2) Now let's make sure we understand functions as objects that can be passed around:
 
 ```
@@ -90,7 +91,13 @@ function testClosure(){
 
 This is a CLOSURE!
 
-A closure is an inner function that has access to the outer (enclosing) function's variables. The closure has access to its own scope (variables defined between its curly brackets), it has access to the outer function's variables, and it has access to the global variables.
+A closure is an inner function that has access to the outer (enclosing) function's variables. The closure has access to:
+
+1) its own scope (variables defined between its curly brackets),
+
+2) the outer function's variables,
+
+3) and the global variables.
 
 The reason why people have difficulty with the concept is that, in this case, the testClosure function has already run. The variable "x" only exists within the scope of the testClosure function. Now that the testClosure function has already run, the variable "x" shouldn't really exist anymore.
 
@@ -119,7 +126,9 @@ function favoriteSportsTeam(teamName){
 
 6) Explain to your neighbour what a closure is, and what makes this a closure.
 
+
 ----
+
 
 Closures are very useful for "function factories". In the above example, we have created three new functions. If we inspected each function, they would look identical:
 
@@ -173,9 +182,9 @@ The task starts as follows (hint - I like to write it in repl.it, and then copy/
 
 
 
-###Example 2 - functions inside for loops:
+###Example 2 - setTimeout inside a for loop:
 
-This is enough to make you want to quit programming forever, so we will not cover this in the lesson.
+THIS IS ENOUGH TO MAKE YOU WANT TO QUIT PROGRAMMING FOREVER, SO WE WILL NOT COVER THIS IN THE LESSON! 
 
 Let's say we wanted to sequentially print out the numbers 0 to 10 using a for loop:
 
@@ -211,21 +220,58 @@ The problem is that the variable i, within each of the anonymous functions, is b
 
 After the loop terminates, the global variable i has the value of 10, and that's what the function 'sees'
 
-What we want to do is bind the variable within each function to a separate, unchanging value outside of the function. Within the for loop, for each value of i, we need to immediately execute a function that returns another function that is bound to this current value of i. That's what this code does:
+What we want to do is bind the variable within each function to a separate, unchanging value outside of the function. Within the for loop, for each value of i, we need to immediately invoke a function expression that returns another function that is bound to this current value of i. 
+
+How do we "immediately invoke a function expression"? 
+
+```
+// A regular function:
+function sayHi(){
+	console.log("Hi");
+}
+
+
+That we are immediately invoking:
+(function sayHi(){
+	console.log("Hi");
+})()
+
+
+Because we are IMMEDIATELY invoking it, we don't actually need to give it a name - we will never actually refer to it anywhere in our code, so we can remove the name and make it anonymous:
+
+(function(){
+	console.log("Hi");
+})()
+
+
+And what is even cooler, is that we can immediately invoke it with an argument, like this:
+
+(function(word){
+	console.log(word);
+})("hello")
+
+We call this final example an "IMMEDIATELY INVOKED FUNCTION EXPRESSION" (or IIFE, pronounced "iffy"). 
+
+Iffies are very cool because everything inside them is wrapped up in its own scope - it will not pollute the global namespace. 
+
+```
+
+Ok, now back to our setTimeout inside our loop. We can immediately invoke a function to return another function for the setTimeout to do its work on. 
 
 ```
 for (var i = 0; i < 10; i++) {
-    setTimeout(function(i) { 
+    setTimeout((function(i) {
         return function() { 
             console.log(i); 
         }; 
-    }(i), 1000*i);
+    })(i), 1000*i);
 }
 ```
 
+
 ###Activity:
 
-Write down what a closure is, and why you want to use one (2 min) and explain to the person next to you.
+Write down what a closure is, and why you want to use one (5 min) and explain to the person next to you.
 
 
 
