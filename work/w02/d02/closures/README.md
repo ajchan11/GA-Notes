@@ -181,8 +181,18 @@ The task starts as follows (hint - I like to write it in repl.it, and then copy/
 - That's great, but now I want a function that MAKES counter functions for me. I want to count several different things at the same time. 
 
 
+###Example 2 - Timing issues:
 
-###Example 2 - setTimeout inside a for loop:
+Let's take a look at an early example of Tic Tac Toe.
+
+When we make a function, it remembers the variables that were around when it was created, right? But.... what happens if we change those variables BEFORE the function we created runs? 
+
+Bad things happen....
+
+
+
+
+###Example 3 - More timing issues... using setTimeout inside a for loop:
 
 THIS IS ENOUGH TO MAKE YOU WANT TO QUIT PROGRAMMING FOREVER, SO WE WILL NOT COVER THIS IN THE LESSON! 
 
