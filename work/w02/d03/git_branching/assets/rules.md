@@ -11,6 +11,7 @@
 * `$ git commit -m "strong commit message"`
 
 Now we have two options : 
+
 1. Push (backup) changes to gitub without merging to master: 
 `$ git push origin branchname `
 
