@@ -19,8 +19,6 @@ Here are some possible visual examples:
 
 ![screenshot3](screenshot3.png)
 
-
-
 ------
 
 ### Basic Challenge Requirements
