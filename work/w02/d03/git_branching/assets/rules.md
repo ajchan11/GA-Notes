@@ -21,6 +21,6 @@ Now we have two options :
 
 ##RULES
 
-![](IMG_0313.JPG =100x100)
-![](IMG_0314.JPG =100x100)
-![](IMG_0315.JPG =100x100)
+<img src="IMG_0313.JPG" style="width:200px" />
+<img src="IMG_0314.JPG" style="width:200px" />
+<img src="IMG_0315.JPG" style="width:200px" />
