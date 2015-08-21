@@ -17,7 +17,7 @@ function takeTurn(){
 			this.innerHTML = "O";
 		}
 		turnCount++;
-	} 	
+	}	
 }
 
 

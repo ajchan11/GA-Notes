@@ -3,7 +3,8 @@
 
 var boxes = document.querySelectorAll(".box");
 
-console.log(boxes);
+
+
 
 for(var i = 0; i < boxes.length; i++){
 	boxes[i].addEventListener("click", takeTurn)
@@ -11,7 +12,7 @@ for(var i = 0; i < boxes.length; i++){
 
 function takeTurn(){
 	console.log(this);
-	this.innerHTML = "new content!";
+	this.innerHTML = "O";
 }
 
 

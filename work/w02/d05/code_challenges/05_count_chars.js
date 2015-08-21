@@ -8,13 +8,7 @@
 // Write your countBs function here:
 
 function countBs(str){
-	var count = 0;
-	for(var i = 0; i < str.length; i++){
-		if(str.charAt(i) === "B"){
-			count++;
-		}
-	}
-	return count;
+
 }
 
 // Now, write another function called 'countCharacters', that takes two arguments.
@@ -29,13 +23,7 @@ function countBs(str){
 // Write your countCharacters function here:
 
 function countChar(str,letter){
-	var count = 0;
-	for(var i = 0; i < str.length; i++){
-		if(str.charAt(i) === letter){
-			count++;
-		}
-	}
-	return count;
+
 }
 
 
