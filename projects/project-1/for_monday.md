@@ -4,7 +4,7 @@ Homework for the Holiday Weekend
 
 1. Re-read the [markdown for Project 1](https://github.com/ga-students/WDI_LA_18/tree/master/projects/project-1) and make sure you have a good understanding of the requirements. 
 
-2. create a **markdown** (readme.md) with your **Wireframes** and **User Stories** in preparation for a presentation on Monday morning. Create a **new github repo** and push the markdown to github. If you need extra help on how to make a markdown you can follow this [cheatsheet](https://github.com/ga-students/WDI_LA_17/blob/master/cheatsheets/markdown.md) in the class repo 
+2. create a **markdown** (readme.md) with your **Wireframes** and **User Stories** in preparation for a presentation on Monday morning. Create a **new github repo** and push the markdown to github. If you need extra help on how to make a markdown you can follow this [cheatsheet](https://github.com/ga-students/WDI_LA_18/blob/master/projects/project-1/markdown.md) in the class repo 
 
 3. On Monday, each student will do a quick presentation on what they plan to build.
 
