@@ -6,5 +6,9 @@
 // range(-3,2) => [-3, -2, -1, 0, 1, 2]; 
 
 function range(start,end){
-
+	var newArray = [];
+	for(var i = start; i <= end; i++){
+		newArray.push(i);
+	}
+	return newArray;
 }

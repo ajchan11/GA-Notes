@@ -7,3 +7,10 @@
 // ######
 // #######
 
+
+var myString ="";
+
+for(var i = 0; i < 7; i++){
+	myString += "#";
+	console.log(myString);
+}
