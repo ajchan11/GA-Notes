@@ -32,7 +32,7 @@ function resetBoard(){
 function checkWinner(player){
 	for(var i = 0; i < winConditions.length; i++){
 		if(boxes[winConditions[i][0]].innerHTML === player && boxes[winConditions[i][1]].innerHTML === player && boxes[winConditions[i][2]].innerHTML === player){
-			console.log(player + " wins!");
+			alert(player + " wins!");
 		}
 	}
 }
