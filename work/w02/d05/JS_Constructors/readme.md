@@ -47,7 +47,7 @@ A constructor is any Javascript function that is used to return a new object. Th
 If we wanted to simulate a class in JavaScript:
 
 ```javascript
-function Person(name){
+var Person = function ( name ) {
   this.name = name;
 }
 ```
@@ -69,25 +69,6 @@ To be sure `jenny` is infact a `Person`, we can:
 jenny instanceof Person;
 // true
 ```
-
-#### Assign with `var`
-
-You could also call `Person` as a normal function - without the new:
-
-```javascript
-Person('Jenny')
-// undefined
-```
-
-However, the `this` value inside the constructor would point to the `window` object and therefore would create a global variable called `name`:
-
-```javascript
-window.name
-// "Jenny"
-```
-
-It is much easier, however, to remember: always assign an object to a variable with `var`!
-
 
 ## Literal vs Constructor Notation - Codealong (15 mins)
 
@@ -112,12 +93,12 @@ Person
 To create another Person, we would need to type this code out again. Or we could use a constructor and do:
 
 ```javascript
-function Person(name){
+var Person = function ( name ) {
   this.name = name;
 }
 
-var person1 = new Person("Dave");
-var person2 = new Person("John");
+var person1 = new Person( "Dave" );
+var person2 = new Person( "John" );
 ```
 
 Just like in Ruby, a constructor acts as a template for all new People in the future. However, it's a little bit more than just a template because of how Prototypical inheritance works, as instances of an Object have links to the object that created them.
@@ -136,7 +117,7 @@ A new function is always an example of Object() in Javascript.
 Now, if we instantiate the Person class -  with the declarative syntax - we see that the constructor (alex) is now a reference to the custom constructor function (`Person(name)`).
 
 ```javascript
-function Person(name){
+var Person = function ( name ){
   this.name = name;
 }
 
@@ -167,15 +148,12 @@ We know that objects are basically key/value pairs. When you ask for a key's val
 Let's revisit the constructor function from earlier, and use it to create two people from the Person class:
 
 ```javascript
-function Person(name){
-  if (!(this instanceof Person)) {  
-    return new Person(name);
-  }
+var Person = function ( name ) {
   this.name = name;
 }
 
-var mum = Person("mum");
-var dad = Person("dad");
+var mum = new Person( "mum" );
+var dad = new Person( "dad" );
 ```
 
 Of course, we'll want to add information to our existing objects.  Super easy with dot notation:
@@ -228,9 +206,6 @@ In addition to that, all instances of Person will have access to that method.
 
 ```javascript
 function Person( name, age ){
-  if ( !( this instanceof Person )) {  
-    return new Person( name );
-  }
   this.name = name;
   this.age = age ? age : 0;
 }
@@ -247,8 +222,8 @@ Person.prototype.haveBirthday = function () {
 	this.age++;
 }
 
-var mum = Person( "mum", 34 );
-var dad = Person( "dad", 47 );
+var mum = new Person( "mum", 34 );
+var dad = new Person( "dad", 47 );
 
 mum.speak == dad.speak;
 // true
@@ -269,11 +244,11 @@ At the moment, we are only using constructors to create an instance of one Objec
 Setting a constructor's `.prototype` property to an instance of another constructor function initializes the prototype chain (sets up inheritance), this is done only once since the prototype object is shared by all initialized objects.
 
 ```javascript
-function Human(){
+var Human = function (){
   this.alive = true;
 }
 
-function Person(name){
+var Person = function ( name ) {
   this.name = name;
 }
 
@@ -281,7 +256,7 @@ function Person(name){
 // But we are changing it to Human {} to exend the Human {}
 Person.prototype = new Human();
 
-var alex = new Person("Alex");
+var alex = new Person( "Alex" );
 ```
 
 Instead of doing:
@@ -292,7 +267,7 @@ Person.prototype = new Human();
 You can actually use the new [`Object.create`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_Objects/Object/create) method:
 
 ```javascript
-Person.prototype = Object.create(Human.prototype);
+Person.prototype = Object.create( Human.prototype );
 ```
 Object.create will not actually run the constructor code, making performance a little better.
 
