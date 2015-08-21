@@ -1,6 +1,6 @@
 Homework for the Holiday Weekend
 
-#1. Prep for Project 1 (required)
+#1. Prep for Project 1
 
 1. Re-read the [markdown for Project 1](https://github.com/ga-students/WDI_LA_18/tree/master/projects/project-1) and make sure you have a good understanding of the requirements. 
 
