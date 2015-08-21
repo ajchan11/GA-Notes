@@ -9,7 +9,7 @@
 ### Fluid Design
 Fluid websites are built using percentages for widths. As a result, columns are relative to one another and the browser allowing it to scale up and down fluidly.
 
-> - (10 min) Lets practice: open the class repository *( this should be bookmarked by now )* go to: **w02/d04/responsive_css/exercise__1/** <br />
+> - (10 min) Lets practice: open the class repository *( this should be bookmarked by now )* go to: **w02/d04/responsive\_css/exercise\_1/** <br />
 > - Change this example to use percents and give it some margins and padding m
 
 ### Adaptive Design
