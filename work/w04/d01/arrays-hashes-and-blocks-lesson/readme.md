@@ -10,10 +10,10 @@ competencies: Programming
 
 # Arrays, Hashes, & Blocks
 
-### Objectives
+### SWBAT
 
 - Use basic array methods including count, first, and last
-- Iterate through arrays with map and each
+- Iterate through arrays with each
 - Use the appropriate data collection for a situation: hash vs. an object 
 - Get and set values for specific hash key
 - Get a list of all keys in a hash
