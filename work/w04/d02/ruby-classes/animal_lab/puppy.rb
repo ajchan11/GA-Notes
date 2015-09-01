@@ -1,15 +1,19 @@
 class Puppy
 
   def initialize name
+
     @name = name
     @asleep = false
     @foodInTummy = 0  
     @stuffInBotty =  1  # He doesn't need to go.
     @happiness = 0
 
-    puts "#{@name} is born!"
+    puts "
+Lo! #{@name} is born! You can feed, walk, putToBed, tickle, or rock your new puppy to sleep! When you get bored, just put #{@name} to sleep (permanently)
+    "
     puts "#{@name} is whimpering"
-    puts "#{@name}'s tummy is rumbling"
+    puts "#{@name}'s tummy is rumbling
+    "
   end
 
   def speak
