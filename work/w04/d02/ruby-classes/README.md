@@ -225,20 +225,39 @@ Notice that we didn't use curly braces AND we omitted one of the attributes (`au
 
 Okay, time to refactor your `Movie` class to take an options hash. Ready...go!
 
-##Refactoring getters and setters with `attr_accessor` and `attr_reader`
-* the differences between `attr_accessor`, `attr_reader`, and `attr_writer`
-* example of why you would want to use attr_reader (`created_at` - don't want to overwrite this value)
+## One last thing...
+You should be able to recognise INHERITANCE...
 
 
-## SPECIAL BONUS! INHERITANCE!
+## Mini-lab - make your animal
 
-1 - Make a Dog class. Each instance object should be initialized with a name. Write a "speak" method, that puts WOOF. 
 
-2 - Make an Animal class. We don't need to write an initialize method, unless we want ALL animals to begin life with certain attributes.
+## INHERITANCE!
+We won't have time to cover this is class, but if you are interested....
+ 
+If you want a class to inherit all the properties of another class, you simple do this:
 
-3 - Write a method in the Animal class. The method should be a behaviour that ALL animals do (respire? move?)
+```
+class Dog < Mammal
 
-4 - Add something to your Dog class, such that the Dog class INHERITS all the properties of the Animal class. 
+	<!-- all my good code here -->
+
+end
+
+```
+
+We are simply saying that the Dog class should inherit all the methods of the Mammal class. This file needs to have access to the Mammal.rb file in order for this to work, so we should require the Mammal file too:
+
+```
+require "./Mammal.rb"
+
+class Dog < Mammal
+
+	<!-- all my good code here -->
+
+end
+
+```
 
 
 ##Review exercises for tomorrow...
