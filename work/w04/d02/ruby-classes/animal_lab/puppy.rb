@@ -1,4 +1,6 @@
-class Puppy
+require "./Dog.rb"
+
+class Puppy < Dog
 
   def initialize name
 
