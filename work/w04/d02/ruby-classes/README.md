@@ -3,7 +3,8 @@
 ##SWBAT
 * Explain the purpose of classes in Ruby
 * Create a Ruby class
-* Write getter and setter methods
+* Create objects using a Ruby class
+* Write getter and setter methods 
 * Use Ruby's `attr_accessor` and `attr_reader` methods
 * Explain how classes can inherit from each other
 
@@ -12,9 +13,9 @@ How could we create a bunch of similar objects -- say, "person" objects -- with 
 
 But we would find out the limitations of this approach pretty quickly. Firstly, if we were to take the approach of using hashes, we would have to create each one completely by hand every time we needed a new object. 
 
-Secondly, we would have no way of directly adding behavior to these objects. Unlike JavaScript, we can't just define a method inside a hash. 
+Secondly, we would have no way of directly adding behavior to these objects. Unlike JavaScript, we can't just define a method inside a hash.
 
-We also wouldn't be able to set basic default values for any of our objects. 
+We also wouldn't be able to set basic default values for any of our objects.
 
 Luckily, Ruby has a better way: classes!  Classes are like blueprints or templates for creating similar kinds of objects.
 
@@ -33,19 +34,31 @@ That's all it takes to get started with a new class in Ruby!  Two things to be a
   2. The name of our class is singular (`Book`, as opposed to `Books`). That is a clue as to how we should think about the role of classes in Ruby: it is the blueprint that will be responsible for creating new "instances". Giving your classes singular names is a matter of convention and style--it is not something that the language enforces. It is a convention that Rails will stick to, so it is what we are going to do too.
 
 
-Okay, so with our new class written, we can actually start using it to instantiate new objects:
+Okay, so with our new class written, we can actually start using it to instantiate new objects.
+
+Let's go into irb, require our Book.rb file, then play around!
 
 ```ruby
+require "./Book.rb"
+
 book1 = Book.new
 ```
+
+book1 is an INSTANCE of the CLASS Book.
 
 This is a good start, but so far, our class doesn't do much. It isn't yet able to create objects that hold the information we need them to hold.
 
 
 ##Writing an `initialize` method to create new objects
-To fix this, we need to make use of a special Ruby method called `initialize`. This method is run automatically every time we use a Class to create a new instance. 
+To fix this, we need to make use of a special Ruby method called `initialize`. Every time we use a Class to create a new instance, the class looks for this method, then runs it.  
 
-This method will let us set the "state" of our objects at the time that they are created.
+We can show this by adding an intialize method to our Book class. 
+
+------------
+LET'S ADD AN INITIALIZE METHOD THAT LOGS A STRING 
+------------
+
+This is fun, but we can actually use this to set the "state" of our objects at the time that they are created.
 
 ```ruby
 class Book
@@ -59,46 +72,9 @@ end
 
 Now, when we call `.new` on our `Book` class, the `initialize` method we wrote will automatically be invoked to assign values to new instances of our `Book` class. 
 
-`new` typically calls `initialize`. The default implementation of new is something like:
+Anything with an @ sign in front of it is an INSTANCE VARIABLE. It is a variable that all of the methods in that class have access to. 
 
-```Ruby
-class Class
-  def new(*args, &block)
-    obj = allocate
-
-    obj.initialize(*args, &block)
-    # actually, this is obj.send(:initialize, …) because initialize is private
-
-    obj
-  end
-end
-```
-
-`new` is a class method, which generally creates an instance of the class (this deals with the tricky stuff like allocating memory that Ruby shields you from so you don't have to get too dirty)
-
-Then, `initialize` an instance method, tells the object to set its internal state up according to the parameters requested.
-
-##Ruby Identifiers
-* Variables
-	* Local = first_name (Start with a lowercase letter or an underscore and consist of letters, underscores and/or digits. Note that ruby convention is to use snake_case instead of camelCase) they are bound to methods that contain them 
-	* Instance = @first_name (Start with a single '@' and consist of the same character set as local variables). They serve the purpose of storing information for individual objects and are bound to the classes that contain them.
-	* Class = @@first_name
-	* Global = $FIRST_NAME 
-* Constants 
-* Keywords - Ruby has a approximately 40 reserved terms associated with specific programming tasks and contexts. For a complete list - google it! 
-* Method Names - Names of methods in Ruby follow the same rules and conventions as local variables. This is by design. Methods don't call attention to themselves as methods, but rather blend into the texture of a program asm simply expressions that provide a value. In some contexts you can't tell just by looking at an expression whether you are seeing a local variable or a method name. And this is intentional. 
-
-
-##Instance variables vs. local variables
-Notice that we are storing the state of our book objects inside instance variables (those variables with the @ sign in front of them).  Each instance of our `Book` class will have their own unique set of these instance variables, which is what allows us to have different books with different authors, titles, etc.
-
-Some things we should know about instance variables:
-
-* Instance variables are bound to an instance of a class and they form what we call the state of an object. Every instance of a class has their own set of instance variables.
-
-* Scope of instance variables:
-  - instance variables are bound to the entire object (or, instance of the class). this means that they are available to every instance method defined in the class.
-  - local variables, however, are scoped to the methods in which they are defined. this means that methods cannot access local variables that have been defined in other methods.
+If we don't put an @ sign in front of a variable, it means the variable is LOCAL, and is only accessible within the method where it was defined.
 
 ##Creating a new instance of our class
 Alright, now that we've got that `initialize` method written, let's create a new book object!
@@ -107,9 +83,39 @@ Alright, now that we've got that `initialize` method written, let's create a new
 book1 = Book.new("Go Dog, Go", "Dr. Seuss", "childrens")
 ```
 
-Now, if we look at the `book1` variable, we will see that we have an object that contains all the values we passed in to the `Book.new` method call. Boom!
+Let's be more specific:
 
+  - instance variables are bound to the object (or, instance of the class) and are available to every instance method defined in the class.
+  - local variables, however, are scoped only to the methods in which they are defined. this means that methods cannot access local variables that have been defined in other methods.
+
+---- 5 mins in pairs
+- What is a Ruby class?
+
+- Why do we use Ruby classes?
+
+- What does the @ sign in front of a variable mean?
+
+- What does it mean if we define a variable and do NOT put the @ sign in front of it?
+
+- If we were in IRB, how would be access the object's instance variables?
+----
+
+
+----
+10 mins in pairs:
+
+- Make a Movie class
+
+- Each movie instance object should be intialized with a title, a year, and a rating.
+
+- Make 3 movie objects in IRB!
+----
+
+##Getters and setters
 So, we've got this awesome new book object. How can we access the individual attributes of the object?  Can we just call `book1.title`, for example, to see the value of that attribute? Not yet! If we do that, we actually end up with an undefined method error. 
+
+Why? Remember - Instance variables can only be access by instance METHODS!
+
 
 We'll explore this in more depth in a minute, but first: it's time for an exercise!
 
@@ -138,21 +144,14 @@ There are two interesting things going on here that are worth discussing:
 1. We can now see very clearly that the instance variables we assigned in our `initialize` method are accessible to other methods inside our class.
 2. We also see Ruby's implicit returns in effect with our `title` method. Ruby methods always return the last thing they evaluate, even if you don't use the `return` keyword explicitly.
 
-Let's write getter methods for the rest of our book attributes:
+-----in pairs: 3 minutes
+- Write getter methods for the rest of our book attributes
 
-```ruby
-def author
-  @author
-end
-
-def genre
-  @genre
-end
-```
+- Test your methods in IRB by creating a new book, and accessing its properties.
+-----
 
 Now we will be able to retrieve the values of all the attributes of our book objects--nice!
 
-Let's go back to our `Tweet` class for our second exercise!
 
 ##Changing our attribute values: setter methods!
 Alright, back to our `Book` class! What happens if we try to change the value of one of our book attributes?
@@ -185,7 +184,7 @@ def author=(value)
 end
 ```
 
-Alright, alright, alright! Getters and setters are now written for our `Book` class. You know what that means: go write the setter methods for our `Tweet` class!
+Alright, alright, alright! Getters and setters are now written for our `Book` class. You know what that means: go write the setter methods for our `Movie` class!
 
 ##Using an options hash to give us more flexibility
 Instead of passing arguments to a method one by one, we can pass in an options hash instead. This can give us a lot more flexibility when instantiating new instances of a class, especially if some of the attributes we want to set are optional or have default values that need to be applied.
@@ -224,13 +223,25 @@ book3 = Book.new(title: "Eloquent JavaScript", genre: "programming")
 
 Notice that we didn't use curly braces AND we omitted one of the attributes (`author`) and it happily created a new instance for us!
 
-Okay, time to refactor your `Tweet` class to take an options hash. Ready...go!
+Okay, time to refactor your `Movie` class to take an options hash. Ready...go!
 
 ##Refactoring getters and setters with `attr_accessor` and `attr_reader`
 * the differences between `attr_accessor`, `attr_reader`, and `attr_writer`
 * example of why you would want to use attr_reader (`created_at` - don't want to overwrite this value)
 
-##Exercises
+
+## SPECIAL BONUS! INHERITANCE!
+
+1 - Make a Dog class. Each instance object should be initialized with a name. Write a "speak" method, that puts WOOF. 
+
+2 - Make an Animal class. We don't need to write an initialize method, unless we want ALL animals to begin life with certain attributes.
+
+3 - Write a method in the Animal class. The method should be a behaviour that ALL animals do (respire? move?)
+
+4 - Add something to your Dog class, such that the Dog class INHERITS all the properties of the Animal class. 
+
+
+##Review exercises for tomorrow...
 * **First Exercise**
   - **You Do:**
     + create a class called `Tweet`
