@@ -5,7 +5,8 @@
 * Create a Ruby class
 * Create objects using a Ruby class
 * Write getter and setter methods 
-* Use Ruby's `attr_accessor` and `attr_reader` methods
+* Use Ruby's 'attr_accessor', 'attr_reader', and 'attr_accessor' methods
+* Initialize a new instance with an options hash
 * Explain how classes can inherit from each other
 
 ##The purpose of classes
@@ -54,9 +55,9 @@ To fix this, we need to make use of a special Ruby method called `initialize`. E
 
 We can show this by adding an intialize method to our Book class. 
 
-------------
-LET'S ADD AN INITIALIZE METHOD THAT LOGS A STRING 
-------------
+
+--- LET'S ADD AN INITIALIZE METHOD THAT LOGS A STRING 
+
 
 This is fun, but we can actually use this to set the "state" of our objects at the time that they are created.
 
@@ -85,10 +86,13 @@ book1 = Book.new("Go Dog, Go", "Dr. Seuss", "childrens")
 
 Let's be more specific:
 
-  - instance variables are bound to the object (or, instance of the class) and are available to every instance method defined in the class.
-  - local variables, however, are scoped only to the methods in which they are defined. this means that methods cannot access local variables that have been defined in other methods.
+- instance variables are bound to the object (or, instance of the class) and are available to every instance method defined in the class.
 
----- 5 mins in pairs
+- local variables, however, are scoped only to the methods in which they are defined. this means that methods cannot access local variables that have been defined in other methods.
+
+
+##TASK 
+5 mins in pairs
 - What is a Ruby class?
 
 - Why do we use Ruby classes?
@@ -98,18 +102,18 @@ Let's be more specific:
 - What does it mean if we define a variable and do NOT put the @ sign in front of it?
 
 - If we were in IRB, how would be access the object's instance variables?
-----
 
 
-----
-10 mins in pairs:
+
+##TASK
+5 mins in pairs:
 
 - Make a Movie class
 
 - Each movie instance object should be intialized with a title, a year, and a rating.
 
 - Make 3 movie objects in IRB!
-----
+
 
 ##Getters and setters
 So, we've got this awesome new book object. How can we access the individual attributes of the object?  Can we just call `book1.title`, for example, to see the value of that attribute? Not yet! If we do that, we actually end up with an undefined method error. 
@@ -119,8 +123,6 @@ Why? Remember - Instance variables can only be access by instance METHODS!
 
 We'll explore this in more depth in a minute, but first: it's time for an exercise!
 
-##Getters and Setters
-Getters and setters are just methods that are responsible for setting an instance variable (setter), and retrieving the value of an instance variable (getter). Instance variables are only directly accessible to the objects they belong to, which is why those objects need to explicitly provide a way for external code to access them, if that is desired.
 
 ##Accessing our object attributes: getter methods!
 So we just saw that calling `book1.title` gave us a no method error. This illustrates an important point and and an important difference from JavaScript. In Ruby everything after the dot in ruby is a method call.
@@ -144,11 +146,12 @@ There are two interesting things going on here that are worth discussing:
 1. We can now see very clearly that the instance variables we assigned in our `initialize` method are accessible to other methods inside our class.
 2. We also see Ruby's implicit returns in effect with our `title` method. Ruby methods always return the last thing they evaluate, even if you don't use the `return` keyword explicitly.
 
------in pairs: 3 minutes
+##TASK
+In pairs: 3 minutes
 - Write getter methods for the rest of our book attributes
 
 - Test your methods in IRB by creating a new book, and accessing its properties.
------
+
 
 Now we will be able to retrieve the values of all the attributes of our book objects--nice!
 
@@ -184,7 +187,9 @@ def author=(value)
 end
 ```
 
-Alright, alright, alright! Getters and setters are now written for our `Book` class. You know what that means: go write the setter methods for our `Movie` class!
+Alright, alright, alright! Getters and setters are now written for our `Book` class. 
+
+Is there a built in way to have these getters and setters written for us? (hint: YES! So let's do it!)
 
 ##Using an options hash to give us more flexibility
 Instead of passing arguments to a method one by one, we can pass in an options hash instead. This can give us a lot more flexibility when instantiating new instances of a class, especially if some of the attributes we want to set are optional or have default values that need to be applied.
