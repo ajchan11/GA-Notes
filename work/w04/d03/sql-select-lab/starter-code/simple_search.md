@@ -1,23 +1,6 @@
-# Stuctured Query Language, Pt. 1
-
-## Learning Objectives:
-- What is SQL?
-- Why do we need to know it?
-- How do we use it?
+# Stuctured Query Language - simple searches
 
 ## Setup
-
-##### 1. create a database from the console
-``createdb world``
-
-##### 2. import our sample database, the cities, countries, and languages of the world
-``psql world -f ./world.sql``
-
-##### 3. use psql to open up our database
-``psql world``
-
-##### 4. navigate into just our country table
-``\d country``
 
 ## Selecting
 
