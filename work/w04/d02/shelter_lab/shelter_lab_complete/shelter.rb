@@ -29,7 +29,7 @@ class Shelter
   end
 
   def add_animal(animal)
-  	key = animal.object_id.to_s
+  	key = animal.object_id
   	value = animal
 
     @animals[key] = value
