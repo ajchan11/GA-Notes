@@ -4,7 +4,6 @@
 *After this lesson, students will be able to:*
 
 - Build models with has_many, belongs_to, has_and_belongs_to_many, and has_many :through
-- Describe macros that match different relationship types
 
 ### Preparation
 *Before this lesson, students should already be able to:*
@@ -139,11 +138,11 @@ If you create a has_and_belongs_to_many association, you need to explicitly crea
 
 > Note: It could help to draw creating a join table between parts and cars or albums, genres on the board.
 
-To create a join table for albums and genres, we need to add another table in the database, let's create a migration:
+To create a join table for albums and genres, we need to add another table in   the database, let's create a migration:
 
 ```bash
 
-rake db:create_migration NAME=create_albums_genres_table
+rails g migration create_albums_genres_table
 
 ```
 
