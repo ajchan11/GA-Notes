@@ -1,13 +1,3 @@
----
-title: Sessions/Login Lab
-type: lab
-duration: "1:25"
-creator:
-    name: Micah Rich
-    city: LA
-competencies: Programming, Server Applications
----
-
 
 # Sessions/Login Lab
 
@@ -21,10 +11,11 @@ We've seen how to encrypt data and how to set, delete and use cookies for a give
 
 #### Requirements
 
-- Create a Flickr Rails app with a user model using bcrypt-ruby that stores encrypted passwords
+- Create a Flickr Rails app with a User model using bcrypt that stores encrypted passwords
 - Add a login/signup page
   - The users should be listed on users/index
-- Create a resource photos with a title(string) and url(text)
+- Create a Photo model with a title(string) and url(text)
+  - The Photo model should me managed by the photos controller
   - Photos should be associated to a user - a photo belongs to a user, a user has many photos
   - Only the logged-in users can add photos
   - A user can only edit and delete the photos he/she owns.
@@ -57,6 +48,6 @@ But once you log in:
 
 #### Resources
 
-- Look to the [solution code](../sessions-logging-in-by-hand-lesson/solution-code) from today's lesson to guide you
+- Look at [the authentication app we built this morning](https://github.com/ga-students/WDI_LA_18/tree/master/work/w05/d04/authentication/authentication_app_part2)
 - [This RailsCast](http://railscasts.com/episodes/250-authentication-from-scratch) on authentication by hand could help, too; note this is an older version!
 - [Hartl's tutorial](https://www.railstutorial.org/book/modeling_users) can always help
