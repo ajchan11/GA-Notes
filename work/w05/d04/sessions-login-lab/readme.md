@@ -5,19 +5,19 @@
 
 > ***Note:*** _This can be a pair programming activity or done independently._
 
-We've seen how to encrypt data and how to set, delete and use cookies for a given a client, whether logged-in or not. Let's practice this by creating a photo-sharring app, Flickr.  
+We've seen how to encrypt data and how to set, delete and use cookies. Let's practice this by creating a photo-sharing app, Flickr.  
 
 ## Exercise
 
 #### Requirements
 
-- Create a Flickr Rails app with a User model using bcrypt that stores encrypted passwords
+- Create a Flickr Rails app with a User model using bcrypt.
 - Add a login/signup page
   - The users should be listed on users/index
 - Create a Photo model with a title(string) and url(text)
-  - The Photo model should me managed by the photos controller
+  - The Photo model should be managed by the photos controller
   - Photos should be associated to a user - a photo belongs to a user, a user has many photos
-  - Only the logged-in users can add photos
+  - Only logged-in users can add photos
   - A user can only edit and delete the photos he/she owns.
 - The app should have a profile page for every user and the photos added by this user should be listed on the user/show page
 
