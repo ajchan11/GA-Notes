@@ -182,7 +182,7 @@ rake db:rollback
 how do you know what migrations have been run?
 
 ```
-rake db:status
+rake db:migrate:status
 ```
 
 ### EXTRA RAKE STUFF!
