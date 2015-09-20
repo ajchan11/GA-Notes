@@ -1,49 +1,77 @@
-var logger = require( 'morgan' );
+var
+  express = require( "express" ),
+  path = require( "path" ),
+  debug = require( "debug" ),
+  logger = require( "morgan" ),
+  mongoose = require( "mongoose" ),
+  bodyParser = require( "body-parser" ),
+  expressLayouts = require( "express-ejs-layouts" ),
+  app = express(),
+  router = express.Router();
 
-var mongoose = require( 'mongoose' );
-mongoose.connect( 'mongodb://localhost/mongoose-modeling' );
-
-var Passenger = require( "./models/passenger" );
-var Flight    = require( "./models/flight" );
-var Terminal  = require( "./models/terminal" );
-var Airport   = require( "./models/airport" );
-
-
-var flight1 = new Flight({
-  from:       "CDG France",
-  to:         "JFK New-York, USA",
-  airline:    "American Airline",
-  passengers: []
-});
-
-flight1.save();
-console.log( flight1 )
+moongoose.connect( "mongodb://localhost/animalshelter" );
 
 
-var flight2 = new Flight({
-  from:       "Heathrow UK",
-  to:         "JFK New-York, USA",
-  airline:    "British Airways",
-  passengers: []
-});
+app.use( logger( "dev") );
+app.use( bodyParser.urlencoded( { extended: true } ) );
+app.set( "views", path.join( __dirname, "views" ) );
+app.use( expressLayouts );
+app.engine( "ejs", require( "ejs" ).renderFile);
+app.set( "view engine", "ejs");
 
-flight2.save();
-console.log( flight2 );
-
+app.listen(3000)
 
 
-var airport1 = new Airport({
-    name:     "JFK",
-    country:  "USA",
-    opened:   ( new Date() ).setYear( 1990 ) )
+require( "./models/animal" );
+var Animal = moongoose.model( "Animal" );
+
+app.get( "/animals", function ( req, res ){
+  Animal.find( {}, function ( err, animals ) {
+    res.render( "animals/index", { animals: animals } );
   });
+})
 
-
-airport1.terminals.push({
-    name:     "Terminal 1",
-    capacity: 234324,
-    flights:  [ flight1, flight2 ]
+app.post( "/animals", function ( req, res ){
+  Animal.create(req.body.animal, function ( err, animal ) {
+    if( err ){
+      res.send( "something wrong happened" + err )
+    }else{
+      res.redirect( "/animals" );
+    }
+  });
 });
-console.log( airport1 );
-console.log( airport1.terminals );
-airport1.save();
+
+app.get( "/animals/:id/adopt", function ( req, res ){
+  Animal.findByIdAndUpdate(req.params.id, { status: "adopted" }, function ( err, animal ){
+    res.redirect( "/animals" );
+  })
+});
+
+app.get( "/animals/:id/abandon", function ( req, res ){
+  Animal.findByIdAndUpdate( req.params.id, { status: "orphan" }, function ( err, animal ){
+    res.redirect( "/animals" );
+  });
+});
+
+
+// development error handler
+// will print stacktrace
+if ( app.get( "env" ) === "development" ) {
+  app.use( function ( err, req, res, next ) {
+    res.status( err.status || 500 );
+    res.render( "error", {
+      message: err.message,
+      error: err
+    });
+  });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use( function ( err, req, res, next ) {
+  res.status( err.status || 500 );
+  res.render( "error", {
+    message: err.message,
+    error: {}
+  });
+});
