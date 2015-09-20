@@ -1,66 +1,50 @@
-# Mongoose Modeling – Embedded & Referenced Documents
+# Mongoose Creation, Updates, & Queries Lab
 
 ## Introduction
 
 > ***Note:*** _This can be a pair programming activity or done independently._
 
-To practice using Mongoose, we will design a small data persisting application to keep track of airport data with different models: Airport, Terminal, Flight, and Passenger. You will have to write the models and then hard code data in your `app.js` file according to the requirements below.  Since we're not worried about Express or views in this activity, log the results of your data persistence in the console when the file is executed - with `node app.js` - so we know what's being saved.
+We've seen how to use MongoDB in a Node environment, so now, let's practice Mongo, Node and Mongoose in this lab. Imagine you work for a pet shelter, and you've been asked to create an MVP for a user interface that will allow you to keep track of adoptions, abandonments, and drop-offs.  You'll have to build a small web application that will allow a user to manipulate records through links and a form.
+
 
 ## Exercise
 
 #### Requirements
 
-- Create an Express application with four models: Airport, Terminal, Flight, and Passenger
-- Include Mongoose and create embedded and referenced models:
+- The application will represent an animal shelter and the user will have options to:
+  - Adopt a pet
+  - Abandon a pet
+  - Leave a new pet in the shelter
+- The root page will show the list of animals
+- For each animal on the index, a link will be displayed
+  - If the animal is "orphan", then the link will be to "adopt" the animal
+  - If the animal is "adopted", then the link will be to "abandon" the animal
+- Create a model Animal with these fields:
+  - name(String)
+  - breed(String)
+  - dob(Date)
+  - gender(String)
+  - family(String)
+  - status(String)
+- Everything can be in one page, and this page will contain some links and a form
 
-  - Airport
-  	- Name(String)
-    	- country(String)
-    	- terminals(Array of embedded Terminal Objects)
-    	- opened(Date)
-  - Terminal
-  	- name(String)
-    - flights(Array of referenced Flight Objects)
-    - capacity(Number)
-  - Flight
-  	- from(String)
-    - to(String)
-    - airline(String)
-  - Passenger
-    - firstName(String)
-    - lastName (String)
-    - dob (Date)
+**Bonus:**
 
-- Hard code the following data in `app.js`:
-
-  - A flight from CDG France to JFK New-York, USA on American Airlines with no passengers.  The name of the flight is "flight1"
-  - A second flight from Heathrow UK to JFK New-York, USA on British Airways with no passengers.  The name of the flight is "flight2"
-  - An airport called "JFK" in the USA opened on a random date in 1990.
-  - A terminal called "Terminal 1" `pushed` to airport1 with a capacity of 234324 and two flights: flight1 and flight2
-
-- Save and console.log all the objects and their children in the console - you should see all objects when `node app.js` is executed.
+- Add some style
+- Add a field image to link pictures from the web
+- Add validations with Mongoose
 
 #### Starter code
 
-No starter code for this app, create it from scratch !
+In the [starter code](starter-code) folder, you'll find a Node js app containing all the packages you need; run `npm install` to set the packages and create a mongo database named `animalshelter`. Then, run the app!
 
 #### Deliverable
 
-The app's folder structure should look like this:
 
-```
-├── app.js
-├── models
-│   ├── airport.js
-│   ├── flight.js
-│   ├── passenger.js
-│   └── terminal.js
-├── node_modules
-└── package.json
-```
-
-You should see all your objects when logged in the console when `node app.js` is executed.
+![Example Image](http://s30.postimg.org/uv04jcwox/Screen_Shot_2015_07_21_at_16_00_59.png)
 
 ## Additional Resources
 
-- [Mongoose Documentation](http://mongoosejs.com/)
+
+- [Express JS documentation](http://expressjs.com/api.html)
+- [MongooseJS documentation](http://mongoosejs.com/docs/api.html)
