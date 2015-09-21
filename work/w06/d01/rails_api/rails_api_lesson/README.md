@@ -71,7 +71,6 @@ We can fix that!  Because we're building an API, we're going to do write our rou
 
   ```ruby
   resources :bowties
-  end
   ```
 
 First of all, let's check out what that `resources` method did:
