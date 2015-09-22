@@ -13,6 +13,7 @@ competencies: Programming, Server Applications
 ### Objectives
 *After this lesson, students will be able to:*
 
+- Make a basic Express app with routes
 - Use and configure middleware like body-parser to handle form submissions
 - Write out the skeleton of a RESTful API
 - Review what JSON is and why we're using JSON as the format for our data
@@ -92,7 +93,7 @@ Now this is pretty awesome (isn't it?) but it doesn't really do anything. Plus, 
 
 Notice that everytime you make a change to your code, you will have to relaunch `node`
 
-`$ npm install nodemon -g` 
+`$ npm install -g nodemon` 
 
 This is a really cool utility that will listen for changes to your code and automatically restart your server when a saved change is detected. 
 
