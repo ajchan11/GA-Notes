@@ -92,7 +92,7 @@ Now this is pretty awesome (isn't it?) but it doesn't really do anything. Plus, 
 
 Notice that everytime you make a change to your code, you will have to relaunch `node`
 
-`$ npm install nodemon -g` 
+`$ npm install -g nodemon` 
 
 This is a really cool utility that will listen for changes to your code and automatically restart your server when a saved change is detected. 
 
