@@ -122,36 +122,48 @@ First we define our _router_. This is what handles our routing. It's normally be
 var express = require('express');
 var app     = express();
 var port    = process.env.PORT || 3000;
-var router  = express.Router();
+var personsRouter  = express.Router();
 ```
 
 This needs to be under the definition of `var app`!  Then we add our routes.
 
 ```javascript
-router.get('/', function(req, res) {
+
+personsRouter.get('/', function(req, res) {
   res.send('index');
 });
 
-router.get('/contact', function(req, res) {
+personsRouter.get('/contact', function(req, res) {
   res.send('contact');
 });
 
-router.get('/about', function(req, res) {
+personsRouter.get('/about', function(req, res) {
   res.send('about');
 });
+```
+
+The best example of using Express Router is the following: Refactoring our routes so that each one has all associated http verbs for each endpoint:
+
+```
+personsRouter.route('/')
+	.get // insert code
+	.post // insert code
+	.put // code
+	.delete // code
+
 ```
 
 At the bottom of the page add:
 
 ```javascript
-app.use('/', router);
+app.use('/', personsRouter);
 ```
 
 As we saw before we are rendering our template and then passing in a local variable (_header_) to use in our template, just like instance variables defined in our controller or layouts that we passed to our views in Rails.
 
 ## Restful Routing - Intro (10 mins)
 
-As we've already seen with Rails, we will use the RESTful standard to build our web apps. At the moment, we've just covered how to handle GET requests, but we can create callbacks for all types of requests. For example, if we want to create a restful controller for the resource cars,it will look like that:
+As we've already seen with Rails, we will use the RESTful standard to build our web apps. At the moment, we've just covered how to handle GET requests, but we can create callbacks for all types of requests. For example, if we want to create a restful controller for the resource persons, it will look like:
 
 ```javascript
 var personsRouter = express.Router();
@@ -189,7 +201,42 @@ app.use("/persons", personsRouter)
 
 ```
 
-We've defined that the endpoint for the car resource will be "/cars".
+REFACTORED: 
+
+```
+var personsRouter = express.Router();
+
+personsRouter.route('/')
+	.get(function(req, res) {
+  		// INDEX
+	});
+	.post(function(req, res) {
+		// CREATE
+	});
+
+personsRouter.get('/new', function(req, res) {
+  // NEW
+});
+	
+personsRouter.route('/:id')
+	.get(function(req, res) {
+  		// SHOW
+	});
+	.put(function(req, res){
+		// UPDATE
+	});
+	.delete(function(req, res) {
+		//DELETE
+	});
+
+personsRouter.get('/:id/edit', function(req, res) {
+  // GET FORM + Person
+});
+
+app.use("/persons", personsRouter)
+```
+
+We've defined that the endpoint for the person resource will be "/persons".
 So the code above will create these 7 routes:
 
 ```javascript
