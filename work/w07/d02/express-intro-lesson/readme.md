@@ -13,6 +13,7 @@ competencies: Programming, Server Applications
 ### Objectives
 *After this lesson, students will be able to:*
 
+- Make a basic Express app with routes
 - Use and configure middleware like body-parser to handle form submissions
 - Write out the skeleton of a RESTful API
 - Review what JSON is and why we're using JSON as the format for our data
