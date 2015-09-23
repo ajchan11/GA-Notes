@@ -14,7 +14,7 @@
 - Morgan, Your Friendly Logger
 - Stop Server, Start Server - Not!
 - Step-by-Step Debugging
-- Maybe.... Create a Skeleton ExpressJS App
+- Maybe.... Scaffold a Skeleton ExpressJS App with express generator...
 
 ## Intro to Debugging<br><small>(5 mins)</small>
 
