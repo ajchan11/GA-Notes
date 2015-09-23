@@ -10,7 +10,7 @@
 
 ### Preparation
 - Create an Express app from scratch
-- Use and configure middleware like body-parser to handle form submissions
+- Use and configure middleware like body-parser
 
 ## What is MongoDB - Intro (15 mins)
 
@@ -73,13 +73,19 @@ However, it's more common to allow MongoDB to create it implicitly for us using 
 
 ![](http://4.bp.blogspot.com/-edz2_QrFvCE/UnzBhKZE3FI/AAAAAAAAAEs/bTEsqnZFTXw/s1600/SQL-MongoDB+Correspondence.PNG)
 
-#### Key Differences of MongoDB
+#### Key Difference of MongoDB
 
 - Schema-less
+
 The documents in a MongoDB collection can have completely different types and number of fields from each other.<br>__How does this compare to a SQL database like PostgreSQL?__
 
-- No Table Joins
-In a SQL DB, we break up related data into separate tables.
+- No table joins
+
+In SQL, we need table joins to link related data. Not so in NoSQL.
+
+
+[this has some cool differences](https://www.mongodb.com/nosql-explained)
+
 
 In MongoDB, we often _embed_ related data in a single document, you'll see an example of this later.
 
@@ -142,8 +148,8 @@ This how we can create and insert a document into a collection named _people_:
 
 ```
 > db.people.insert({
-    name: "Fred", // Don't type the dots, they are from the
-    age: 21     // shell, indicating multi-line mode
+    name: "Fred",
+    age: 21     
 })
 ```
 
@@ -255,6 +261,22 @@ Otherwise, specify a criteria to remove all documents that match it:
 >db.people.remove( { age: { $lt: 16 } } )
 ```
 
+## Practice:
+
+* make a new collection called students
+
+* add yourself to the collection, with your name and dream_job
+
+* add three more students all at once, with their name and dream_job. 
+
+* use .find() to find a student in your collection
+
+* use .find() to find multiple students
+
+* use .update() an attribute of a student
+
+
+
 ## Data Modeling in MongoDB - Intro (10 mins)
 
 There are two ways to modeling related data in MongoDB:
@@ -271,6 +293,10 @@ In MongoDB, by design, it is common to __embed__ data in a parent document.
 Modeling data with the __embedded__ approach is different than what we've seen in a relational DB where we spread our data across multiple tables. However, this is the way MongoDB is designed to work and is the reason MongoDB can read and return large amounts of data far more quickly than a SQL DB that requires join operations.
 
 To demonstrate __embedding__, we will add another person to our _people_ collection, but this time we want to include contact info. A person may have several ways to contact them, so we will be modeling a typical one-to-many relationship.
+
+
+
+
 
 ## Modeling Data - Codealong (15 mins)
 
