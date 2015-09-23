@@ -38,11 +38,6 @@ We've seen how to use MongoDB in a Node environment, so now, let's practice Mong
 
 In the [starter code](starter-code) folder, you'll find a Node js app containing all the packages you need; run `npm install` to set the packages and create a mongo database named `animalshelter`. Then, run the app!
 
-#### Deliverable
-
-
-![Example Image](http://s30.postimg.org/uv04jcwox/Screen_Shot_2015_07_21_at_16_00_59.png)
-
 ## Additional Resources
 
 
