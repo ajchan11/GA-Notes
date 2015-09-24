@@ -13,26 +13,25 @@ To practice using Mongoose, we will design a small data persisting application t
 - Create an Express application with four models: Airport, Terminal, Flight, and Passenger
 - Include Mongoose and create embedded and referenced models:
 
-  - Airport
-  	- Name(String)
-    	- country(String)
-    	- terminals(Array of embedded Terminal Objects)
-    	- opened(Date)
-  - Terminal
-  	- name(String)
-    - flights(Array of referenced Flight Objects)
-    - capacity(Number)
-  - Flight
-  	- from(String)
-    - to(String)
-    - airline(String)
-  - Passenger
-    - firstName(String)
-    - lastName (String)
-    - dob (Date)
+- Airport
+	- Name (String)
+	- country (String)
+	- terminals (Array of embedded Terminal Objects)
+	- opened (Date)
+- Terminal
+	- name (String)
+	- flights (Array of referenced Flight Objects)
+	- capacity (Number)
+- Flight
+	- from (String)
+	- to (String)
+	- airline (String)
+- Passenger
+	- firstName (String)
+	- lastName (String)
+	- dob (Date)
 
 - Hard code the following data in `app.js`:
-
   - A flight from CDG France to JFK New-York, USA on American Airlines with no passengers.  The name of the flight is "flight1"
   - A second flight from Heathrow UK to JFK New-York, USA on British Airways with no passengers.  The name of the flight is "flight2"
   - An airport called "JFK" in the USA opened on a random date in 1990.
