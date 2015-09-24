@@ -26,8 +26,6 @@ We've seen how to use MongoDB in a Node environment, so now, let's practice Mong
 
 **Bonus:**
 
-- Add some style
-- Add a field image to link pictures from the web
 - Add validations with Mongoose
 
 #### Starter code
