@@ -35,7 +35,7 @@ console.log( flight2 );
 var airport1 = new Airport({
     name:     "JFK",
     country:  "USA",
-    opened:   ( new Date() ).setYear( 1990 ) )
+    opened:   ( new Date() ).setYear( 1990 )
   });
 
 
