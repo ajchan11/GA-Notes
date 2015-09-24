@@ -49,12 +49,9 @@ Here's a useful diagram showing the ExpressJS request/response cycle:
 By default, in most apps without debugging configuration, we'd be logging out the server port once it has started. That is it. We get no other information about requests or errors like we have in Rails. No biggie, though, we can use some _Middleware_ to achieve this.
 
 
-
 ## Middleware
 
-
-
-After setting up our app and before our routes we tell our app to use a new function we are providing. That's all Middleware is! When writing custom Middleware, it's best practice to pass in the **req** object, the **res** object and finally **next**, even if we don't use it! In this case, we are simply logging out the request method ('GET'), the request path ('/') and the request IP ('127.0.0.1' - localhost). The request object provided by Express Callbacks will give you access to a lot of properties and methods that will be really useful debugging:
+After setting up our app and before our routes we tell our app to use a new function we are providing. That's all Middleware is! When writing custom Middleware, it's best practice to pass in the **req** object, the **res** object and finally **next**, even if we don't use it! In this case, we are about to simply log out the request method ('GET'), the request path ('/') and the request IP ('127.0.0.1' - localhost). The request object provided by Express Callbacks will give you access to a lot of properties and methods that will be really useful debugging:
 
 * ExpressJS request object Properties
 	* req.app
@@ -82,16 +79,9 @@ You can find more details [here](http://expressjs.com/api.html#req).
 
 ## Working with Express debugging tools - Codealong (15 mins)
 
-> Note: Instructor should provide starter code for this section.  The starter code should also include some errors that we'll be able to debug later in the final section of the lesson.
 
 Open up an Express app, and let's configure our app to use Middleware.
 
-> Note: Instructor should make there way around the room to help students set this up; it will help to leave the `app.js` sample on the projector.
-
-
-#### Next
-
-Looking back at `app.js` sample, take a look at `next`:
 
 ```javascript
 // Middleware
@@ -99,7 +89,14 @@ app.use(function(req, res, next) {
   console.log(req.method + " request to " + req.path + " from " + req.ip);
   next();
 });
+
+spend a couple of minutes console logging other cool stuff
+
 ```
+
+#### Next
+
+Take a look at `next`, what does it do?
 
 This tells express to continue processing the request or the next piece of Middleware. You can edit the request from inside of a Middleware function so if you are writing your own - be careful!
 
@@ -259,11 +256,38 @@ When a Node app is running, v8 (the javascript engine executing the code) keeps 
 
 The console should now be stopped where you added the `debugger`statement, if you click on the tab `console` in Chrome dev tools, then you can access the variable declared before the debugger statement, as if we were debugging JavaScript in the browser!
  -->
-## Codealong - Debugging a Node app (25 mins)
+## Debugging a Node app (25 mins)
 
 Let's set up our app to use node-debug - in addition `Middleware`, `Morgan`, and `Nodemon` - and work through some problems we encounter.
 
 > Note: Instructor should ensure that applications are properly configured with Middleware, Morgan, Nodemon, and node-inspector (with students) and then work through the errors in the existing code base with the class.
+
+<!-- 
+CHEATY WAY TO QUICKLY SET UP AN EXPRESS APP!
+
+First, install the `express-generator` package:
+
+```
+> npm install -g express-generator
+```
+
+There are a few options, let's check them out:
+
+```
+> express -h
+```
+
+Even though we will not be using views in this lesson, let's generate our app as if we are using the **ejs** template engine:
+
+```
+> express -e node-app
+> cd node-app
+> npm install
+```
+
+Then, test that the app starts up with `npm start`, which will run the command associated with the `start` key in `package.json`.
+
+Browse to `localhost:3000` and observe ExpressJS's welcome page. -->
 
 #### Conclusion (5 mins)
 

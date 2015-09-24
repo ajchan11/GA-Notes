@@ -15,10 +15,7 @@ We've seen how to use MongoDB in a Node environment, so now, let's practice Mong
   - Adopt a pet
   - Abandon a pet
   - Leave a new pet in the shelter
-- The root page will show the list of animals
-- For each animal on the index, a link will be displayed
-  - If the animal is "orphan", then the link will be to "adopt" the animal
-  - If the animal is "adopted", then the link will be to "abandon" the animal
+- The root will show the list of animals
 - Create a model Animal with these fields:
   - name(String)
   - breed(String)
@@ -26,7 +23,6 @@ We've seen how to use MongoDB in a Node environment, so now, let's practice Mong
   - gender(String)
   - family(String)
   - status(String)
-- Everything can be in one page, and this page will contain some links and a form
 
 **Bonus:**
 
@@ -37,11 +33,6 @@ We've seen how to use MongoDB in a Node environment, so now, let's practice Mong
 #### Starter code
 
 In the [starter code](starter-code) folder, you'll find a Node js app containing all the packages you need; run `npm install` to set the packages and create a mongo database named `animalshelter`. Then, run the app!
-
-#### Deliverable
-
-
-![Example Image](http://s30.postimg.org/uv04jcwox/Screen_Shot_2015_07_21_at_16_00_59.png)
 
 ## Additional Resources
 
