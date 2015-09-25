@@ -16,6 +16,8 @@ Deploying is a highly procedural yet simple operation, that is dependent upon th
 
 Interestingly, highly opinionated, but a little lacking in the final steps [tilcode tutorial](http://www.tilcode.com/deploying-a-mean-stack-app-to-heroku/) tutorial about deploying.
 
+![](heroku-mongolab.JPG)
+
 ---
 
 #####More deployment specific: 
@@ -84,6 +86,8 @@ Make sure that your package.json has a start script:
  * `$ heroku logs`
  * `$ heroku open`
  * `$ heroku local web` with Procfile: `web: node index.js` (runs production env. code locally)
+
+ ![](git-team-workflow.JPG)
 
 
 
