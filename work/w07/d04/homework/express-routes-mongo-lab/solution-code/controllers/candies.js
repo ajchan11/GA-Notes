@@ -6,7 +6,7 @@ function getAll( request, response ) {
     if( error ) {
       response.json( { message: "Could not find any candy" } );
     }
-    response.render( "layout", { candies: candies } );
+    response.json( { candies: candies } );
   });
 }
 
