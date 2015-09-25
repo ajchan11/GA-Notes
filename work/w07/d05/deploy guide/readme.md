@@ -87,6 +87,11 @@ Make sure that your package.json has a start script:
  * `$ heroku open`
  * `$ heroku local web` with Procfile: `web: node index.js` (runs production env. code locally)
 
+ 
+ ---
+ 
+## Reminder of git team workflow:
+
  ![](git-team-workflow.JPG)
 
 
