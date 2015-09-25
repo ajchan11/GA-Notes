@@ -21,8 +21,6 @@ You're going to use Mongoose to create a schema for your model, as you've alread
   - Next, Create a GET endpoint. Hit the GET endpoint using cURL or Postman to create a new piece of data - you should see the data that you just POSTed
   - Repeat these steps for PUT and DELETE
 
-- Create views and render data in the browser with templating (EJS)
-  - Create a `views` directory and `ejs` files in that directory
   - Challenge yourself by DRYing up your code and using a [partial](https://scotch.io/tutorials/use-ejs-to-template-your-node-application#ejs-partials-footer-ejs,-head-ejs,-header-ejs)!
 
 - Deploy the app
