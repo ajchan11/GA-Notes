@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node server.js"
   },
-  "name": "intro-to-oauth",
+  "name": "Intro-to-oauth",
   "version": "0.0.1",
   "main": "server.js",
   "author": "",
