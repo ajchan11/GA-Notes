@@ -272,7 +272,7 @@ apiRouter.use(function(req, res, next){
 	} else {
 
 		// 3 - If we can't find a token at all, we'll just send back an error message
-		return res.status(403)send({success: false, message: "no token provided"})
+		return res.status(403).send({success: false, message: "no token provided"})
 	}
 })
 ```
