@@ -58,9 +58,13 @@ There are many libraries for WebSocket in all languages & popular frameworks. We
 Head to [socket.io/get-started](http://socket.io/get-started/chat/) for an in class codealong of their demo chat app. 
 
 
+##Extra Resources
 
+Future technologies that might affect WebSocket.
 
+[SPDY](https://en.wikipedia.org/wiki/SPDY)
 
+[HTTP2](https://http2.github.io/)
 
 
 
