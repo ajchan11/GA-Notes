@@ -12,5 +12,14 @@
     "passport": "^0.2.0",
     "passport-facebook": "^2.0.0",
     "passport-google-oauth": "~0.1.5"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "Intro-to-oauth",
+  "version": "0.0.1",
+  "main": "server.js",
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }

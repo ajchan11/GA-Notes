@@ -94,16 +94,16 @@ Now that Facebook knows about us - and note, you'll have to do this for each app
 In `models/User.js`:
 
 ```javascript
-var mongoose = require('mongoose');
+var mongoose = require( "mongoose" );
 
-module.exports = mongoose.model('User',{
-  fb: {
-    id: String,
-    access_token: String,
-    firstName: String,
-    lastName: String,
-    email: String
-  }
+module.exports = mongoose.model( "User", {
+	fb: {
+		id: String,
+		access_token: String,
+		firstName: String,
+		lastName: String,
+		email: String
+	}
 });
 ```
 
@@ -112,59 +112,58 @@ module.exports = mongoose.model('User',{
 As we've already seen when we've used `passport-local`, passport use strategies.  `passport-facebook` uses the same process!  In the file `config/passport.js` we need to add a lot of code:
 
 ```javascript
-var User = require('../models/User');
-var FacebookStrategy = require('passport-facebook').Strategy;
+var
+	User = require( "../models/User" ),
+	FacebookStrategy = require( "passport-facebook" ).Strategy;
 
 module.exports = function(passport){
-  passport.serializeUser(function(user, done) {
-    done(null, user._id);
-  });
+	passport.serializeUser(function(user, done) {
+		done(null, user._id);
+	});
 
-  passport.deserializeUser(function(id, done) {
-    User.findById(id, function(err, user) {
-      console.log('deserializing user:',user);
-      done(err, user);
-    });
-  });
+	passport.deserializeUser( function( id, done) {
+		User.findById( id, function( err, user ) {
+			done(err, user);
+		});
+	});
 
-  passport.use('facebook', new FacebookStrategy({
-    clientID        : process.env.FACEBOOK_API_KEY,
-    clientSecret    : process.env.FACEBOOK_API_SECRET,
-    callbackURL     : 'http://localhost:3000/auth/facebook/callback',
-    enableProof     : true,
-    profileFields   : ['name', 'emails']
-  }, function(access_token, refresh_token, profile, done) {
+	passport.use( "facebook", new FacebookStrategy({
+		clientID        : process.env.FACEBOOK_API_KEY,
+		clientSecret    : process.env.FACEBOOK_API_SECRET,
+		callbackURL     : "http://localhost:3000/auth/facebook/callback",
+		enableProof     : true,
+		profileFields   : ["name", "emails"]
+	}, function( access_token, refresh_token, profile, done ) {
 
-    // // Use this to see the information returned from Facebook
-    // console.log(profile)
+	// Use this to see the information returned from Facebook
+	// console.log(profile)
     
-    process.nextTick(function() {
-
-      User.findOne({ 'fb.id' : profile.id }, function(err, user) {
-        if (err) return done(err);
-        if (user) {
-          return done(null, user);
-        } else {
-
-          var newUser = new User();
-          newUser.fb.id           = profile.id;
-          newUser.fb.access_token = access_token;
-          newUser.fb.firstName    = profile.name.givenName;
-          newUser.fb.lastName     = profile.name.familyName;
-          newUser.fb.email        = profile.emails[0].value;
-
-          newUser.save(function(err) {
-            if (err)
-              throw err;
-
-            return done(null, newUser);
-          });
-        }
-
-      });
-    });
-  }));
-
+		process.nextTick(function() {
+	
+			User.findOne({ "fb.id" : profile.id }, function(err, user) {
+				if (err) {
+					return done(err);
+				} else if (user) {
+		          return done(null, user);
+				} else {
+		        
+					var newUser = new User();
+					newUser.fb.id           = profile.id;
+					newUser.fb.access_token = access_token;
+					newUser.fb.firstName    = profile.name.givenName;
+					newUser.fb.lastName     = profile.name.familyName;
+					newUser.fb.email        = profile.emails[0].value;
+		
+					newUser.save(function(err) {
+						if (err) {
+			             		throw err;
+						}
+			            return done(null, newUser);
+					});
+				}
+			});
+		});
+	}));
 }
 ```
 
@@ -189,21 +188,21 @@ For simplicity sake, we will set up just one view that shows different data depe
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Facebook authentication</title>
+	<title>Facebook authentication</title>
 </head>
 <body>
-  <h1>FACEBOOK LOGIN USING PASSPORT</h1>  
-  <div>
-    <% if(user != undefined){ %>
-      <h2>Below is the data sent by facebook</h2>
-      <pre>
-        <%= user.fb %>
-      </pre>
-      <a href="/logout">Logout</a>
-    <% } else { %>
-      <a href="/auth/facebook">Login with Facebook</a>
-    <% } %>
-  </div>
+	<h1>FACEBOOK LOGIN USING PASSPORT</h1>  
+	<div>
+	<% if(user != undefined){ %>
+		<h2>Below is the data sent by facebook</h2>
+		<pre>
+			<%= user.fb %>
+		</pre>
+		<a href="/logout">Logout</a>
+	<% } else { %>
+		<a href="/auth/facebook">Login with Facebook</a>
+	<% } %>
+	</div>
 </body>
 </html>
 ```
@@ -213,8 +212,8 @@ Look, again, in your `User.js` file, to the block of code that provides us with 
 Now, we need to create a route to render this view:
 
 ```javascript
-app.get('/', function(req, res){
-  res.render('layout', {user: req.user});
+app.get( "/", function( req, res ){
+	res.render( "layout", { user: req.user } );
 });
 ```
 
@@ -223,7 +222,7 @@ When using passport, the user object will always be attached to the request obje
 Now, let's add the route that will be used to create the request to Facebook:
 
 ```javascript
-app.get('/auth/facebook', passport.authenticate('facebook', { scope: 'email'} ));
+app.get(  "/auth/facebook", passport.authenticate( "facebook", { scope: "email" } ) );
 ```
 
 This one's easy and will redirect the user to the Facebook website.  If the user already authorized the app, then Facebook will send back the request to the url passed as a param with the field `callbackURL`.
@@ -235,11 +234,11 @@ This one's easy and will redirect the user to the Facebook website.  If the user
 For this app, if you take a look at the strategy, we've used `http://localhost:3000/auth/facebook/callback`. We will now create the route handler for this route:
 
 ```javascript
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { 
-    successRedirect: '/',
-    failureRedirect: '/' 
-  })
+app.get( "/auth/facebook/callback",
+	passport.authenticate( "facebook", { 
+		successRedirect: "/",
+		failureRedirect: "/" 
+	})
 );
 ```
 
@@ -248,9 +247,9 @@ For this app, we will always redirect to the main page, but in some other apps, 
 The last route is the one that will log the user out:
 
 ```javascript
-app.get("/logout", function(req, res){
-  req.logout();
-  res.redirect("/")
+app.get( "/logout", function( req, res ){
+	req.logout();
+	res.redirect( "/" )
 })
 ```
 
