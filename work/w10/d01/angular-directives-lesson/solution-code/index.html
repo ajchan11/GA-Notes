@@ -14,9 +14,9 @@
       <h1>Todos: {{todos.all.length}}</h1>
       <h5>( <a href="#" ng-click="todos.showHidden()">Show Hidden</a> )</h5>
       <ul>
-        <li ng-repeat="todo in todos.all track by $index" ng-hide="todo.done">
+        <li ng-repeat="todo in todos.all track by $index" ng-hide="todo.hidden">
           <span>{{todo.task}}</span>
-          <span><a href="#" ng-click="todo.done=true" />Hide</a></span>
+          <span><a href="#" ng-click="todo.hidden=true" />Hide</a></span>
           <span><a href="#" ng-click="todos.remove( $index )">Complete</a></span>
         </li>
       </ul>
