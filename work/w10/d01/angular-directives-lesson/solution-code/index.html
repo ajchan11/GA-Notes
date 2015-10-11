@@ -1,0 +1,30 @@
+<html ng-app="todoApp">
+  <head>
+    <title>Angular - Go #1</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+      ul{
+        list-style-type: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div ng-controller="TodosController as todos">
+      <h1>Todos: {{todos.all.length}}</h1>
+      <h5>( <a href="#" ng-click="todos.showHidden()">Show Hidden</a> )</h5>
+      <ul>
+        <li ng-repeat="todo in todos.all track by $index" ng-hide="todo.done">
+          <span>{{todo.task}}</span>
+          <span><a href="#" ng-click="todo.done=true" />Hide</a></span>
+          <span><a href="#" ng-click="todos.remove( $index )">Complete</a></span>
+        </li>
+      </ul>
+      <!-- <form id="add-todo" ng-submit="todos.add()" new-task> -->
+      <form id="add-todo" ng-submit="todos.add()" >
+        <!--<input type="text" placeholder="I need to..." /> -->
+        <input type="text" placeholder="I need to..." ng-model="todos.newTask" />
+      </form>
+    </div>
+  </body>
+</html>
