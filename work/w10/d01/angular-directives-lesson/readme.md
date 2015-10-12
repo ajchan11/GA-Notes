@@ -24,11 +24,35 @@ Our end goal for this lesson is to build ourselves a simple little todo app. Sho
 
 We'll have to list an array of todos, demonstrate some simple hiding & showing mechanisms, and bind some changing data via a form.
 
-## Set up your app - Independent Practice (5 mins)
+## We Do - Bower ( 10 mins )
+#### setup your app
 
-Since you guys are killers at setting up Angular apps from yesterday, take five minutes to make empty JS and CSS folders, make an `app.js` and a `todosController.js` and get set up. Don't forget an index, with sourced JS files! Make those files, go go go!
+Lets get npm to install bower.io for us.
 
-## ng-repeat - Codealong (20 minutes)
+`$ npm i -g bower`
+
+Now lets initilize bower:
+
+`$ bower init`
+
+This will help you build your bower.json file for your app... this manages your Front End dependancies.
+Now that we have bower initilized, lets set it to work and have it go get angular for us:
+
+`$ bower install angular`
+
+Now you have angular, and its in the following folder: _(and can be updated with almost no work from you)_
+
+`/bower_components/angular/angular.min.js`
+
+Now anytime in the future angular updates, you have to do nothing to your index.html file and such just run:
+
+`$ bower update`
+
+Bingo, done!
+
+Since you guys are killers at setting up Angular apps, take ten minutes to make empty `domain` folder, and add an `app.js` to get set up. Don't forget an index, with sourced JS files! Make those files, go go go!
+
+## ng-repeat - Codealong ( 15 minutes )
 
 Let's start filling in our `todosController` a little bit - add in some initial seed data:
 
