@@ -1,7 +1,7 @@
 angular
   .module( "todoApp", [] )
   .controller( "TodosController", TodosController )
-//  .directive( "newTask", newTask )
+  //.directive( "newTask", newTask )
 
 function TodosController () {
   // this is our hardcoded seed data
@@ -27,8 +27,8 @@ TodosController.prototype.add = function ( ) {
 TodosController.prototype.remove = function ( index ) {
     this.all.splice( index, 1 )
 }
-
-/*function newTask () {
+/*
+function newTask () {
   return {
     
     link: function (scope, element, attrs) {
