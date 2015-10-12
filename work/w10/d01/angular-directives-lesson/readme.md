@@ -38,7 +38,7 @@ Now lets initilize bower:
 This will help you build your bower.json file for your app... this manages your Front End dependancies.
 Now that we have bower initilized, lets set it to work and have it go get angular for us:
 
-`$ bower install angular`
+`$ bower install angular --save`
 
 Now you have angular, and its in the following folder: _(and can be updated with almost no work from you)_
 
