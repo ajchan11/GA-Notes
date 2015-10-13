@@ -6,7 +6,7 @@
 
 ```
 Noah - Adam
-Kayla - Pauline
+Kayla - Paul
 Jeff - Julie
 Kyle - Andre
 Alex - Percy
