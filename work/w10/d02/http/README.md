@@ -25,6 +25,10 @@ Do a quick `GET` request in postman to `https://bowties-restful-api.herokuapp.co
 ## Let's set up an app to interact with this API (20 mins)
 
 We're going to need a front-end app that has an ```index.html```, and a js folder that consists of ```app.js``` (where we will make our module) and ```bowtiesController``` (where we will make our controller)
+
+
+Let's start with the index.html
+
 ***********
 
 ```html
@@ -138,7 +142,6 @@ function BowtiesController() {
     {material: 'silk', pattern: 'houndstooth'},
     {material: 'cotton', pattern: 'tartan'}
   ];
-  return this;
 }
 ```
 
@@ -157,7 +160,6 @@ function BowtiesController() {
     {material: 'silk', pattern: 'houndstooth'},
     {material: 'cotton', pattern: 'tartan'}
   ];
-  return this;
 }
 ```
 
@@ -180,8 +182,8 @@ Now:
 
 ```html
 <body>
-  <section ng-controller="BowtiesController as bowties">
-    {{bowties}}
+  <section ng-controller="BowtiesController as bowtiesCtrl">
+    {{bowtiesCtrl.bowties}}
   </section>
 </body>
 ```
@@ -212,7 +214,7 @@ function BowtiesController(){
 -    {material: 'silk', pattern: 'houndstooth'},
 -    {material: 'cotton', pattern: 'tartan'}
 -  ];
-+  this.all = [];
++  this.bowties = [];
 }
 ```
 
@@ -225,16 +227,21 @@ With a little setup, we'll do a GET request to our API, and assign `this.bowties
 
 Angular dependencies – like libraries or plugins that other people have built – are defined first in our module (unless they come with Angular by default), and then _injected_ into any controllers that need to use them.
 
-`$http` happens to come with Angular, so we only need to _inject_ it into our controller. We do that with a simple command, and then by simply passing an argument to our controller function.
+`$http` happens to come with Angular, so we only need to _inject_ it into our controller function. We do that with a simple command, and then by simply passing an argument to our controller function.
 
 In `js/bowtiesController.js`:
 ```js
-BowtiesController.$inject = ['$http'];
-function BowtiesController($http){
-  // ...
-  // ...
-  // ...
-}
+
+angular.module('bowtiesApp')
+
+  .controller('BowtiesController', BowtiesController)
+
+  BowtiesController.$inject = ['$http'];
+  function BowtiesController($http){
+    // ...
+    // ...
+    // ...
+  }
 ```
 
 The first tells the controller we intend to use this library called `$http`, the second allows us to pass the library in and gives it the name $http. Think of it just like any other argument in a function – because it's the first argument, and we called it $http, we can use it inside our function using that name.
@@ -247,14 +254,15 @@ The first tells the controller we intend to use this library called `$http`, the
 BowtiesController.$inject = ['$http'];
 
 function BowtiesController($http){
-  var self = this;
-  self.bowties = [];
+  var vm = this;
+  vm.bowties = [];
 
   function getBowties(){
     $http
       .get('https://bowties-restful-api.herokuapp.com/api/bowties/')
       .then(function(response){
-        self.bowties = response.data.bowties;
+        console.log(response)
+        vm.bowties = response.data;
     });
   }
 
@@ -271,10 +279,9 @@ function BowtiesController($http){
 // ...
 
   function getBowties(){
-    $http
-      .get('https://bowties-restful-api.herokuapp.com/api/bowties/')
+    $http.get('https://bowties-restful-api.herokuapp.com/api/bowties/')
       .then(function(response){
-        self.bowties = response.data;
+        vm.bowties = response.data;
     });
   }
 
@@ -284,7 +291,7 @@ function BowtiesController($http){
 }
 ```
 
-We call `$http`, then our favorite HTTP verb, `.get`. There's one for `.post`, too. It's asynchronous, so we'll use `.then` to make sure when it's _done_ it'll do what we want. And what we want is just to overwrite our `.all` array with the response we get back.
+We call `$http`, then our favorite HTTP verb, `.get`. There's one for `.post`, too. It's asynchronous, so we'll use `.then` to make sure when it's _done_ it'll do what we want. And what we want is just to overwrite our empty `.bowties` array with the response we get back.
 
 Feel free to `console.log(response)` and see everything that comes back. `.data` is just the data, `.
 
@@ -300,8 +307,8 @@ function BowtiesController($http){
 to
 ```js
 function BowtiesController($http){
-  var self = this;
-  self.bowties = [];
+  var vm = this;
+  vm.bowties = [];
   // ...
 ```
 
@@ -314,8 +321,7 @@ function BowtiesController($http){
 // ...
 
   function getBowties(){
-    $http
-      .get('https://bowties-restful-api.herokuapp.com/api/bowties/')
+    $http.get('https://bowties-restful-api.herokuapp.com/api/bowties/')
       .then(function(response){
         // Where is 'this' scoped to?
         this.bowties = response.data;
@@ -325,21 +331,20 @@ function BowtiesController($http){
 }
 ```
 
-We're 3 functions deep when we call `this.bowties` – `this` is no longer referring to our controller, it's referring to the function inside `.then`. If you left it that way, you'd never see any data, because to see it in the view, that data needs to be attached directly to our _controller_.
+We're 3 functions deep when we call `this.bowties` – `this` is no longer referring to our controller, it's referring to the window. If you left it that way, you'd never see any data, because to see it in the view, that data needs to be attached directly to our _controller_.
 
 So what's a simple way to make sure we're scoped to the right place? A tiny little variable. The variable you choose is up to you, it's just preference. So if we do:
 
 ```js
 function BowtiesController($http){
-  var self = this;
-  self.all = [];
+  var vm = this;
+  vm.bowties = [];
 // ...
 
   function getBowties(){
-    $http
-      .get('https://bowties-restful-api.herokuapp.com/api/bowties/')
+    $http.get('https://bowties-restful-api.herokuapp.com/api/bowties/')
       .then(function(response){
-        self.all = response.data;
+        vm.bowties = response.data;
     });
   }
 
@@ -362,5 +367,5 @@ Now that we've got GETing down, it's up to you to try POSTing. Just like any RES
 ## Conclusion (5 mins)
 - How do you inject dependencies into an Angular controller?
 - How do you use $http to do a GET request?
-- Why did we start using `self` instead of `this`?
+- Why did we start using `vm` instead of `this`?
 - How do you do a POST request?
