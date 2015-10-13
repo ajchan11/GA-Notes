@@ -6,11 +6,11 @@
 
 ```
 Noah - Adam
-Tali - Paul
+Kayla - Pauline
 Jeff - Julie
 Kyle - Andre
 Alex - Percy
-Kayla - Steve - Greg [Dual Navigator]
+Steve - Greg [Dual Navigator]
 ```
 
 **Person A -** Build an API endpoint with Node, Express, and MongoDB (Mongoose too). This should handle incoming requests, and have 3 routes. It should be able to create and update and delete users, they can be simple... Don't go wild on the models.
