@@ -125,6 +125,9 @@ li:hover {
 /*Button & check box styles
 ===================================*/
 
+[class^="btn"]{
+  cursor:pointer;
+}
 .btn {
   border: none;
   padding: 6px 15px;

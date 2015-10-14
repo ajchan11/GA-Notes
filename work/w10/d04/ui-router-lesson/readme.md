@@ -9,6 +9,7 @@
 - Build a basic Angular app
 - Interact with an API
 - Pull the starter code
+
 ## Intro (5 mins)
 
 Routing, as you've seen in multiple frameworks and languages, is adding in the ability to render different pages in a application – but in a single-page app, how can we have multiple pages? In Angular, it comes down to storing all our views on our main page and turning them on and off as we need.
@@ -23,7 +24,7 @@ But today we're looking at an even more beefed up router: a third-party plugin c
 
 Let's walk through it.
 
-## Six Steps to UI-Router - Codealong (40 mins)
+## Seven Steps to UI-Router - Codealong (40 mins)
 
 Because of the nature of what we're building today - our URL will be telling our application what particular views to render - we can't just open our file with ``file://`` anymore. We'll have to load up a quick server to render our initial HTML file.
 
@@ -50,18 +51,16 @@ We'll need the UI-Router source. It's not an official, core library, and it's no
 Assuming the latter, let's make sure our script tag is _after_ including Angular, and before we try to use it.
 
 ```html
-<script src="js/angular.js"></script>
+<script src="bower_components/angular/angular.min.js"></script>
 <!-- new router script -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.min.js"></script>
-<!-- end new router script -->
-<script src="js/main.js"></script>
-<script src="js/TodosController.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+<script src="domain/app.js"></script>
+<script src="domain/controllers/TodosController.js"></script>
 ```
 
 ### Step Two: Adding a Dependency
 
 Because we're adding in a new library, it'll be a dependency – we'll need to make sure Angular knows about our library, so we can use it. If you haven't used any external libraries yet, rejoice in that we're finally going to put _something_ in those empty brackets in our ``app.js``.
-
 
 ```javascript
 // in app.js
@@ -71,7 +70,7 @@ angular
 
 ``'ui.router'`` just happens to be what the library is called in it's source. Most libraries will tell you what to write here in their documentation, and if you need more than one, just list them like any array.
 
-### Philosophically, WTF is Routing?
+### Philosophically, what is Routing?
 
 A route, in general, is just the path you take to get somewhere. That's not specific to web development, but it's one of those words we've latched on because it's a good description – when you're changing URL, when that location bar changes, you're on a new route.
 
@@ -79,11 +78,11 @@ Our router just sets up which routes we want to exist and points our code where 
 
 This means our Angular app can simulate having multiple pages, which gives us the ability to make more complex applications...which is awesome!
 
-Let's open up our ``app.js`` and add some routes.
+Let's open up our `app.js` and add some routes.
 
 ### Step Three: Add Some Configuration
 
-In ``app.js``, we had this:
+In `app.js`, we had this:
 
 ```javascript
 // in app.js
@@ -118,7 +117,7 @@ Because in Angular we're not really changing locations (single-page apps, here),
 function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
-      url: "/",
+      url: "",
       templateUrl: "home.html",
     });
 }
@@ -169,7 +168,7 @@ So let's make things interesting and add another state in here. Let's make a sta
 function MainRouter($stateProvider, $urlRouterProvider) {
   $stateProvider
     .state('home', {
-      url: "/",
+      url: "",
       templateUrl: "home.html",
     })
     .state('archive', {
