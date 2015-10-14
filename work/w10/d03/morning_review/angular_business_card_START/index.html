@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
 	<head>
 		<meta charset="utf-8">
 		<title></title>
@@ -9,7 +9,7 @@
 		<script type="text/javascript" src="js/app.js"></script>
 		<script type="text/javascript" src="js/controller.js"></script>
 	</head>
-	<body>
+	<body ng-controller="MainController as mainCtrl">
 
 		<header>
 			<h1>Angular Business Card Generator</h1>
@@ -20,22 +20,34 @@
 			<div class="settings-panel">
 
 				<ul>
-					<li>Name: <input type="text"></li>
-					<li>Occupation: <input type="text"></li>
+					<li>Name: <input type="text" ng-model="mainCtrl.person.name"></li>
+					<li>Occupation: <input type="text" ng-model="mainCtrl.person.occupation"></li>
+					<li>Email: <input type="text" ng-model="mainCtrl.person.email"></li>
+					<li>Phone: <input type="text" ng-model="mainCtrl.person.phone"></li>
+					<li>Color <input type="color" ng-model="mainCtrl.person.color"></li>
+					<li>Curvyness <input type="range" ng-model="mainCtrl.person.borderRadius"></li>
 				</ul>	
 
 				<div class="order">
-					<button>Remove logo</button><button>Order now</button>
+
+					<button ng-click="mainCtrl.toggleLogo()">
+						<span ng-if="mainCtrl.logoIsVisible">Remove Logo</span>
+						<span ng-if="!mainCtrl.logoIsVisible">Show Logo</span>
+					</button>
+
+
+					<button ng-click="mainCtrl.orderNow()">Order now</button>
 				</div>	
 
 			</div>
 
-			<div class="business-card" style="background: lightgray; border-radius: 10px">
+			<div class="business-card" style="background: {{mainCtrl.person.color}}; border-radius: {{mainCtrl.person.borderRadius}}px">
 				<div class="contents">
-					<img id="ga-logo" src="http://sanfrancisco.impacthub.net/wp-content/uploads/sites/100/2015/04/GA_logo.png">
-					<h1 id="name">Blaise Thomas</h1>
+					<img ng-if="mainCtrl.logoIsVisible" id="ga-logo" src="http://sanfrancisco.impacthub.net/wp-content/uploads/sites/100/2015/04/GA_logo.png">
+					<h1 id="name">{{mainCtrl.person.name}}</h1>
 					<hr>
-					<h3>Web Developer</h3>
+					<h3>{{mainCtrl.person.occupation}}</h3>
+					<h4>{{mainCtrl.person.phone}}<span style="float:right">{{mainCtrl.person.email}}</span></h4>
 
 				</div>
 			</div>
