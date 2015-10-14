@@ -2,8 +2,7 @@
 
 ## Introduction
 
-To practice working with UI-Router, you're going to make a single-page app with multiple views. Rather than starting totally from scratch, you'll be build up our previous **Infamous Criminals** interface to be more like a _real_ app.  Your mission is to convert the `starter code`:w
- so that each section of the interface has one purpose – one page per function.
+To practice working with UI-Router, you're going to make a single-page app with multiple views. Rather than starting totally from scratch, you'll be build up our previous **Infamous Criminals** interface to be more like a _real_ app.  Your mission is to convert the `starter code` so that each section of the interface has one purpose – one page per function.
 
 Just like earlier in the week, make sure you've got Mongo running - navigate to the API folder, and fire that up with an `npm start`; and just like in our UI-Router lesson, don't forget you'll need to run your front-end through a server so `http-server` will be your friend.
 
