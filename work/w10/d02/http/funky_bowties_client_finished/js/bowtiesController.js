@@ -18,10 +18,8 @@ function BowtiesController($http){
 	vm.addTie = function(){
 		$http.post('https://bowties-restful-api.herokuapp.com/api/bowties', {
 			material: vm.material, pattern: vm.pattern
-		}).then(function(){
-			vm.bowties.push({material: vm.material, pattern: vm.pattern})
-			vm.material = ""
-			vm.pattern = ""
+		}).then(function(response){
+			vm.bowties.push(response.data)
 		})
 
 	}
