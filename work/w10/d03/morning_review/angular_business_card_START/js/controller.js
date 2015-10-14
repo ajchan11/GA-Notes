@@ -10,14 +10,34 @@ angular
 	.module('app')
     .controller('MainController', MainController);
 
-    function MainController(){
-    	var self = this;
+    MainController.$inject = ['$http']
 
-    	self.person = {
-    		name: "John"
+    function MainController($http){
+    	var vm = this;
+
+        vm.logoIsVisible = true;
+
+    	vm.person = {
+    		name: "John",
+            occupation: "Dolphin trainer",
+            email: "",
+            phone: "",
+            color: "",
+            borderRadius: ""
     	}
     	
-    	console.log(self)
+        vm.toggleLogo = function(){
+            vm.logoIsVisible = !vm.logoIsVisible
+        }
+
+        vm.orderNow = function(){
+            // $http.post("https://www.localhost:3000/api/persons", vm.person)
+            // .then(function(){
+            //     console.log("success!")
+            // })
+            console.log('thanks for ordering')
+        }
+
     	// Here is where you write all the code that 
     	// describes how your controller should work!
 
