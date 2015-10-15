@@ -416,4 +416,6 @@ function MainController($state, authFactory, $rootScope){
 
 ```
 
+##Appendix
+If you want to check out a pretty good pre-built angular auth module, check out <a href="https://github.com/lynndylanhurley/ng-token-auth">ng-token-auth</a>
 
