@@ -22,6 +22,7 @@ TodosController.prototype.addTodo = function () {
 
 //function that allows us to delete specific todos from our todoList
 TodosController.prototype.deleteTodo = function ( id ) {
+  //OH NO, what's this thing here () => {}?
   this.todoList.forEach( ( x, i, arr ) => {
     if ( x.id == id ) {
       this.todoList.splice( i, 1 )
