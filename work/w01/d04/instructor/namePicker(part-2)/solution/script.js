@@ -1,5 +1,5 @@
 !( function ( window ){
-    var nameList = [ "Kyle", "Leslie", "Adam", "Steve", "Julie", "Andre", "Noah", "Jeff", "Alex", "Greg", "Paul", "Kayla", "Percy" ],
+    var nameList = [ "Kyle", "Talley", "Adam", "Steve", "Julie", "Andre", "Noah", "Jeff", "Alex", "Greg", "Paul", "Kayla", "Percy" ],
         getName = pickName( nameList.slice() ),
         nameBox = document.getElementById( "name" ),
         body = document.getElementsByTagName( "body" )[0],
