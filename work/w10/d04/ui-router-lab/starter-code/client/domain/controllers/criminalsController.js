@@ -20,9 +20,7 @@ CriminalsController.prototype.getCriminals = function () {
 CriminalsController.prototype.addCriminal = function () {
   this.$http
     .post( "http://localhost:3000/criminals", this.newCriminal )
-    .then( function ( response ) {
-      getCriminals()
-    })
+    .then( ()=> getCriminals() )
   this.newCriminal = {}
 }
 
