@@ -8,47 +8,66 @@ creator:
 competencies: Testing, Server Applications
 ---
 
-#Intro to Testing
-(Testing Node with Mocha and Chai & Testing Ruby using RSPEC)
+#Intro to Testing (part 1)
+(Testing in Node with Mocha and Chai & Testing Ruby using RSPEC)
 
 ### Objectives
 *After this lesson, students will be able to:*
 
 * Have a good understanding of what testing is and why it is important.
-	* Understand the difference between TDD and retrospective testing.
-	* Understand the difference between unit tests and integration tests.
+	* Understand the difference between TDD and 'retrospective' (after the fact) testing.
+	* Understand the difference between unit tests and E2E tests.
 * Do some basic testing in Node using Mocha.
+	* The testing Cycle:
+		1. Pending - Orange
+		2. Failing - Red
+		3. Passing - GREEN!  
 	* "Describe" blocks
 	* "It" examples
-	* Understand the difference between a testing framework like mocha, and an assertion library like chai. 
+	* Understand the difference between a **testing framework** like **mocha**, and an **assertion library** like **chai**. 
 
 ### Preparation
-*Before this lesson, students should already be able to:*
+*Before this lesson, students should already know:*
 
-* Node basics
+* JS fundamentals
+* How to write a simple Node application
 
 
-## Intro (5 mins)
+## Intro 
 
-Note: "Tests" and "Specs" are often used interchangeably
+Note: **"Tests"** and **"Specs"** are often used interchangeably
 
-Testing is quite hard to wrap your head around initially - but then it becomes super easy and very fun. It can be a great entry level position (QA) because it is in high demand and you will learn a lot about the code base you are testing. 
+Testing is quite hard to wrap your head around initially - **but** then it becomes super easy and very fun (once you identify the basic, simple pattern). **QA** can be a great entry level position, because it is in high demand and you will learn a lot about the code base you are testing. 
 
-Testing is similar to [double entry bookkeeping](https://en.wikipedia.org/wiki/Double-entry_bookkeeping_system) for code (if you have ever kept the books for a business).
+Testing is similar to [double entry bookkeeping](https://en.wikipedia.org/wiki/Double-entry_bookkeeping_system) (an accounting practice) but for code.
 
-It is the process of writing an automated test, to ensure that your code works. If the code is broken, a test will fail.
+It is the process of writing a series of **automated** tests to ensure that your code works. If the code is broken, a test will fail.
 
-The key thing is that we have already been doing a bunch of testing. Everytime you fire up your server and request a page you are effectively testing for a given result, manually.
+We have already been doing a bunch of **manual** testing. Every time you render your code in the browser, you are effectively testing for a given result, manually. Testing manually can be very time consuming. 
 
-Testing manually can be very time consuming. Enter automated tests. With a single command you can run an entire series of tests. You can also run tests in the background and alert you if something is broken. 
+Enter automated tests. With a single command you can run an entire series of tests. You can also run tests in the background that will alert you if something is broken. 
 
-You can test for anything, and even match your user stories: "make sure a user can create themselves", "make sure a user can login", "make sure my create action saves something to the db" etc...
+You can test for anything, and even match your user stories: "as a [anybody], I can create a [user], on the signup page", "as a [user], I can start a session, on the login page", "as a [user], I can create a new todo item, and save it to the db" etc...
 
 ##TDD
 
-Because we are such badass coders that write tests for all our code, why not even just start the whole process by writing the tests first? Then we can make these tests pass by writing the code. This is TDD. 
+Because we are such badass coders, why not even just start the whole process by writing the tests first? Then we can make these tests pass by writing the code. This is TDD. 
 
-##Unit v Integration:
+Once you have experienced this you will appreciate the beauty of TDD. Writing tests **before** you write the code helps ensure that your **intent** is truly fullfilled. It is similar to **pseudocoding** then writing code, but even more water-tight. 
+
+In this way we can liken testing to the scaffolding of a building - it makes sense to lay the scaffolding first, then build the building, instead of building a freestanding structure and supporting it with scaffolding. 
+
+TDD can be tricky. Writing tests doesn't have to be.
+
+##Unit v E2E:
+
+The terminology thrown around here can be a bit confusing: A simple way to see it could be that there are **units specs**, and then **everything else**. Everything else includes things such as integration tests, End to End, User acceptance tests etc etc....
+
+Unit specs are **granular** and are about testing small units of code. Unit tests try to answer questions such as "Did I think about the logic correctly?" or "Does the sort function order the list in the right order?"
+
+E2E tests are more extensive and might look for multiple actions across multiple controllers. They try to match up to your **user stories** "As a [x], when I [y], I can [z], so that [xyz]"
+
+**TASK** > Take a moment to think about the advantages and disadvantages of each type of testing, and understand why a thoroughly tested app will comprise of both types. 
 
 Below are some examples from a Rails Shopping list app - where a User can create 'Items'
 
@@ -82,7 +101,7 @@ As you can see, these are quite low level tests that are looking for the existan
 
 Unit specs are used for testing models, controllers and views.
 
-####Integration specs
+####E2E specs
 
 ```
 feature "a user can create a new item", :type => :feature do
@@ -103,7 +122,7 @@ feature "a user can create a new item", :type => :feature do
 end
 ```
 
-This is a great example of an integration spec in Ruby using a library called [capybara](https://github.com/jnicklas/capybara).
+This is a great example of an E2E spec in Ruby using a library called [capybara](https://github.com/jnicklas/capybara).
 
 This test reads like plain english. 
 
@@ -178,9 +197,9 @@ It is often color coded (depnding on framework and customization). Tests can be 
 In this case we have two pending examples, (Two pending specs) 
 
 ----
-##Independent practice (10mins)
+##Pending Tests - ORANGE
 
-Write more pending examples, and group them into suites. Run your tests see them all pending in the print out. These pending examples can be about anything/ we will not attempt to make them pass.
+Write more pending examples, and group them into describe blocks. Run your tests, see them all pending in the print out. These pending examples can be about anything- we will not attempt to make them pass.
 
 Example:
 
@@ -192,12 +211,22 @@ describe('I haven't done my homework', function() {
 ```
 
 The point of this practice is to remember we have not yet written any "logic" in our tests. 
+All tests should start out in this state: pending.
 
-## Adding Chai to Mocha - Codealong 
+## ASSERTIONS: Adding Chai to Mocha 
 
 Did somebody say logic?
 
 `$ npm install chai --save-dev`
+
+This is our assertion library. It will take care of the next two stages: **RED** and **GREEN**: **FAILING** and **PASSING**. 
+
+**Assertions** work by evaluating a statement.
+
+* If the statemenet is **truthy**, the test will **PASS**. 
+* If the statement is **falsy**, the test will **FAIL**.
+* If the statement is **empty**, the test will **PEND**.
+
 
 indexSpec.js
 
@@ -207,7 +236,7 @@ Assertion:
 
 `expect('HELLO WORLD').to.equal('hello world');`
 
-It should fail. This is actually a valid assertion. 
+It should fail. Why?
 
 Let's play around with assertions a little more:
 
@@ -230,15 +259,16 @@ it('returns lowercase of a string', function() {
 
 ```
 
-now try adding at the top:
+Now try adding at the top:
 
 `var word = 'hello world';`
 
-Now what happens?
+What happens?
 
----
 
-Now instead of declaring var word, we can import source the target file (to be tested) and call the function we want to test. To check its actual output:
+##Failing Tests - RED
+
+Now instead of declaring var word, we can import the target file (to be tested) and call the function we want to test. To check its actual output:
 
 ```
 var word = require('./index');
@@ -271,11 +301,9 @@ it('removes any hyphen', function() {
 ...
 ```
 
-##Independent practice (5 mins)
+##Passing Tests - GREEN!
 
-Now go write the code that will make this test pass. (A function, 'sanitize', thats turns a given string to all lowercase, and removes any hyphens.
-
-Please do this in your groups.
+Now go write the code that will make this test pass. (A function, 'sanitize', thats turns a given string to all lowercase, and removes any hyphens.)
 
 ```
 exports.sanitize = function(word) {
