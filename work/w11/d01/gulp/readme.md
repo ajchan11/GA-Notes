@@ -6,7 +6,6 @@
 	- Mocha test runner w/ Gulp
 	- JSHint && ESLint
 	- Gulp nodemon
-	- Live-Reload
 
 
 ## Code Along - Gulp Setup ( 10 min )
