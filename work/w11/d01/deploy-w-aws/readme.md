@@ -89,7 +89,7 @@ Step 1 - Type the following:
 
 ```bash
 $ chmod 400 ~/Downloads/*.pem
-$ SSH -i ~/Downloads/*.pem ubuntu@$IP`
+$ SSH -i ~/Downloads/*.pem ubuntu@$IP
 ```
 
 $IP stands for the IP of your server we just memorized
@@ -97,7 +97,7 @@ $IP stands for the IP of your server we just memorized
 Now you should be in your server and your terminal should have changed to look something like this:
 
 ```bash
-ubuntu@ip-0-0-0-0:~$
+ubuntu@ip-172-21-12-51:~$
 ```
 
 Cool so we're in our HOME directory in our instance in the cloud
