@@ -1,16 +1,18 @@
 # Deploying with AWS
 
-### Objectives
+### Objectives:
+###### Students will be able to...
 - Set up a private key pair
 - Open up the firewall with a Security Group
 - Create an Ubuntu 14.04 EC2 instance
 - Use SSH communication to connect to an EC2 instance
 - Use apt-get to install packages
 	- NodeJS
+	- Git
+	- MongoDB
+	- WGET
 - Deploying a node app on an EC2 Instance
 - _Bonus: Hooking up a domain_
-
-
 
 ## Build Along
 
@@ -27,15 +29,16 @@ Now find the `EC2` link, and expand the `Network & Security` accodrian. Go to `S
 	 
 | Type | Protocol | Port Range |   Source   |
 |------|----------|------------|------------|
-| SSH  |   TCP    |     22     |  CustomIP  |
+| SSH  |   TCP    |     22     |    MyIP    |
 | HTTP |   TCP    |     80     |  Anywhere  |
 
 - Set the outbound rules:
 
-| Type | Protocol | Port Range |   Source   |
-|------|----------|------------|------------|
-| GIT  |   TCP    |    9418    |  Anywhere  |
-| HTTP |   TCP    |     80     |  Anywhere  |
+| Type 		 | Protocol | Port Range |   Source   |
+|-------------|----------|------------|------------|
+| Custom TCP  |   TCP    |    9418    |  Anywhere  |
+| HTTP 		 |   TCP    |     80     |  Anywhere  |
+| HTTPS		 |   TCP    |    443     |  Anywhere  |
 
 - Click the `Create` button
 
@@ -80,13 +83,15 @@ First thing... never ever share that *.pem file with anyone... ever. Don't ever 
 
 Lets `SSH` into our newly created EC2 Instance
 
-In you command prompt / terminal, you don't have to go anywhere, you can SSH from any folder because you're exiting your local machine.
+In you command prompt / terminal, you don't have to go anywhere, you can SSH from any folder because you're exiting your local machine. First we need to change the permissions on the *.pem file so we can use it to SSH in.
 
 Step 1 - Type the following:
 
 ```bash
+$ chmod 400 ~/Downloads/*.pem
 $ SSH -i ~/Downloads/*.pem ubuntu@$IP`
 ```
+
 $IP stands for the IP of your server we just memorized
 
 Now you should be in your server and your terminal should have changed to look something like this:
@@ -110,9 +115,15 @@ Then `wget` nvm, and update to current node version... `4.2.1`
 $ sudo apt-get update
 $ sudo apt-get install -y wget git nodejs mongodb
 $ sudo apt-get upgrade -y
+# These two lines Setup so you can use port '80'
+$ sudo apt-get install libcap2-bin
+$ sudo setcap cap_net_bind_service=+ep `readlink -f \`which node\``
+# Making the DB folder and setting permissions
 $ sudo mkdir -p /data/db/
 $ sudo chown `id -u` /data/db
+# Getting NVM
 $ wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.29.0/install.sh | bash
+# Install the most update version of node
 $ nvm install 4.2.1
 $ nvm use 4.2.1
 ```
@@ -120,7 +131,7 @@ $ nvm use 4.2.1
 Cool everything should be ready... Lets go clone a repository we want to launch on our instance... Project 3 for example.
 
 ```bash
-$ mongod > 2&>1 &
+$ mongod &
 [pid]
 $ git clone git@github.com:userName/repository.git
 $ cd repository
