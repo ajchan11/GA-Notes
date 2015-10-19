@@ -1,8 +1,11 @@
 "use strict"
 var
-  heart = "<3",
-  smile = ":)"
+	heart = "<3",
+	smile = ":)"
 
-var funcName = function () {
-  var looks_good = "LG"
+var funcName = function(){
+	var looksGood = "LG"
+	if ( looksGood === "LG" ){
+		console.log( "Looks Good" )
+	}
 }
