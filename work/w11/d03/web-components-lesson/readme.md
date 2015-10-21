@@ -289,4 +289,4 @@ Lets find some paper elements and put them together... our objective.
 
 ### You Do - Find your favorites ( 60 min )
 
-Build a small Todo list application with Web Components using Polymer 1.0 & Paper Elements.
+Build a small Todo list application with Web Components using Polymer#^1.1.5 & Paper Elements.
