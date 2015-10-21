@@ -174,7 +174,7 @@ Polymer({
 
 ## Paper Elements
 
-### Intro ( 5 min )
+### Intro ( 15 min )
 
 Lets find some paper elements and put them together... our objective.
 - Nav Bar
@@ -184,4 +184,4 @@ Lets find some paper elements and put them together... our objective.
 
 ### You Do - Find your favorites ( 40 min )
 
-Build a small Todo list application with Web Components using Polymer 1.0
+Build a small Todo list application with Web Components using Polymer 1.0 & Paper Elements.
