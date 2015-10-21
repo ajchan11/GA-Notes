@@ -34,7 +34,7 @@ Run the usual:
 `$ npm i` 
 `$ bower install`
 
-Run an `$ http-server` in the `/solution-code` directory in an extra tab and just leave it running
+Run an `$ http-server` in the `/starter~~~~-code` directory in an extra tab and just leave it running
 
 So here we have some elements... lets fill em in
 
@@ -44,10 +44,10 @@ So here we have some elements... lets fill em in
   <ga-button route="noteCards">Note Cards</ga-button>
 </ga-nav>
 <ga-page view="images" class="hidden">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Africa_and_Europe_from_a_Million_Miles_Away.png/252px-  Africa_and_Europe_from_a_Million_Miles_Away.png" />
+  <img src="https://farm4.staticflickr.com/3751/10106979505_e08ac12189_o.jpg" />
 </ga-page>
 <ga-page view="noteCards" class="hidden">
-  <ga-note-card>
+  <ga-note-card title="Note Card Title">
     This is the notecard
   </ga-note-card>
 </ga-page>
@@ -56,7 +56,7 @@ So here we have some elements... lets fill em in
 
 ### We Do: Now we're going to build a button ( 10 min )
 ```html
-<dom-module id="ga-button" attributes="route">
+<dom-module id="ga-button" attributes="route active">
   <link rel="import" type="css" href="ga-button.css" />
   <template>
     <content></content>
@@ -77,6 +77,24 @@ Polymer( {
   }
 })
 ```
+The CSS
+
+```css
+:host{
+  flex-grow:1;
+  min-height:30px;
+  width:50%;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+  border:thin solid white;
+  background: darkRed;
+  color:white;
+  padding: 4px;
+}
+```
+
+
 ### You Do: Go find a WC button you like ( 5 min )
 
 **3 minutes**... Find a WC button you like
@@ -93,7 +111,6 @@ Polymer( {
   <script src="ga-nav.js"></script>
 </dom-module>
 ```
-
 And the related JS
 
 ```javascript
@@ -115,16 +132,25 @@ Polymer( { is: "ga-nav",
   }
 } )
 ```
+Some CSS to go with that:
+
+```css
+:host{
+  width:100%;
+  display:flex;
+}
+```
+
 ### You Do: Go find a WC Navigation you like ( 5 min )
 
-First 3 minutes... find
+**3 minutes**... Find a WC button you like
 
-Second 2, Turn and share
+**2 Minutes**... Turn and share. Why?
 
 
 ### We Do - Wire up the pages ( 15 min )
 ```html
-<dom-module id="ga-page">
+<dom-module id="ga-page" attributes="view">
  <link rel="import" type="css" href="ga-page.css" />
   <template>
     <content></content>
@@ -136,29 +162,39 @@ And the related JS
 
 ```javascript
 // element registration
-Polymer( {
-  is: "ga-page",
+Polymer({
+  is:"ga-page",
   ready: function () {
     var route = document.querySelector( "ga-button[active]" ).getAttribute( "route" )
     if ( this.getAttribute( "view" ) === route ) {
       this.classList.remove( "hidden" )
+    } else {
+       this.classList.add( "hidden" )
     }
   }
-} )
+})
+```
+The related CSS
+
+```css
+
 ```
 
 ### You Do: Go find a WC Navigation you like ( 5 min )
 
-First 3 minutes... find
+**3 minutes**... Find a WC button you like
 
-Second 2, Turn and share
+**2 Minutes**... Turn and share. Why?
 
 ### We Do - Wire up the notes ( 15 min )
 ```html
-<dom-module id="ga-note-card">
+<dom-module id="ga-note-card" attributes="title">
  <link rel="import" type="css" href="ga-note-card.css" />
   <template>
-    <content></content>
+    <h3>{{title}}</h3>
+    <div>
+      <content></content>
+    </div>
   </template>
   <script src="ga-note-card.js"></script>
 </dom-module>
@@ -167,10 +203,79 @@ And the related JS
 
 ```javascript
 Polymer({
-	is: "ga-note-card"
+  is: "ga-note-card"
 })
 ```
+And some CSS
 
+```css
+:host{
+  width: 98%;
+  border: thin solid black;
+  border-radius: 0 0 6px 0;
+  background: lightBlue;
+  box-shadow: 0 1px 1px 1px rgba( 0, 0, 0, .5);
+  display:block;
+  margin: 4px auto;
+}
+
+:host:hover{
+  box-shadow: 1px 2px 2px 1px rgba( 0, 100, 200, .5);
+}
+
+:host h3{
+  margin: 0;
+  padding: 0;
+}
+```
+
+### You Do: Go find a WC Note Card you like ( 5 min )
+
+**3 minutes**... Find a WC button you like
+
+**2 Minutes**... Turn and share. Why?
+
+
+### We Do - Wire up the notes ( 15 min )
+```html
+<dom-module id="ga-note-card" attributes="title">
+ <link rel="import" type="css" href="ga-note-card.css" />
+  <template>
+    <h3>{{title}}</h3>
+    <div>
+      <content></content>
+    </div>
+  </template>
+  <script src="ga-note-card.js"></script>
+</dom-module>
+```
+And the related JS
+
+```javascript
+Polymer( { is: "ga-note-card" } )
+```
+And some CSS
+
+```css
+:host{
+  width: 98%;
+  border: thin solid black;
+  border-radius: 0 0 6px 0;
+  background: lightBlue;
+  box-shadow: 0 1px 1px 1px rgba( 0, 0, 0, .5);
+  display:block;
+  margin: 4px auto;
+}
+
+:host:hover{
+  box-shadow: 1px 2px 2px 1px rgba( 0, 100, 200, .5);
+}
+
+:host h3{
+  margin: 0;
+  padding: 0;
+}
+```
 
 ## Paper Elements
 
@@ -182,6 +287,6 @@ Lets find some paper elements and put them together... our objective.
 - Material Design
 
 
-### You Do - Find your favorites ( 40 min )
+### You Do - Find your favorites ( 60 min )
 
 Build a small Todo list application with Web Components using Polymer 1.0 & Paper Elements.
