@@ -141,7 +141,7 @@ Stacks are used because:
 - A stack is conceptually easier to reason about than an array.
 - No matter how many elements are in the stack, an item can be pushed or popped in a constant time. (This is known as O(1) in computer science parlance.)
 
-
+<!-- 
 In the following implementation, we use Ruby's built-in Array class to implement a stack.
 
 ***RUBY IMPLEMENTATION W/ ARRAY***
@@ -153,7 +153,7 @@ class Stack
   def initialize
     @contents = []
   end
-<!-- 
+
   #add to top of stack
   #the optional if statement is used if we want
   #to limit the size of the stack
@@ -180,7 +180,7 @@ class Stack
   #delete all items in the stack
   def clear
     @contents.clear
-  end -->
+  end
 end
 ```
 
@@ -194,7 +194,7 @@ function Stack() {
  
 }
 
-<!--  
+ 
 //add to top of stack
 //the optional if/else statement is used if we want
 //to limit the size of the stack
@@ -227,10 +227,10 @@ Stack.prototype.isEmpty = function() {
 Stack.prototype.clear = function(){
 	this.contents.length = 0;
 	return this.contents;
-}; -->
+};
 
 ```
-
+ -->
 
 ## Add a push method.
 
