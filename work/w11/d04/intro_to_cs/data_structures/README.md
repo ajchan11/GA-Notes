@@ -232,36 +232,6 @@ Stack.prototype.clear = function(){
 ```
  -->
 
-## Add a push method.
-
-Add a new method to class Stack:
-
-**push** — Adds an item to the stack
-
-## Add a popmethod.
-
-Add a new method to class Stack:
-
-**pop** -- Removes the top-most item.
-
-## Add a peek method.
-
-Add a new method to class Stack:
-
-**peek** -- Returns the top-most item (without removing it).
-
-## Add a empty? or isEmpty method.
-
-Add a new method to class Stack:
-
-**isEmpty(JS) or empty?(Ruby)** -- Returns true if the stack is empty, false if it isn't.
-
-## Add a clear method.
-
-Add a new method to class Stack:
-
-**clear** -- Removes all items from Stack.
-
 
 *Would we do all this in real life to 'make a stack'?*
 
