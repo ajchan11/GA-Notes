@@ -74,8 +74,6 @@ Write a ruby OR javascript function in repl.it for each of the following things,
 
 * A function that repeatedly halves an input argument until it is less than 1
 
-* A function that multiplies an input by itself
-
 * A function called ```my_turn_to_be_uppercase``` that takes an array of lowercase strings as an input. 
 
 For each item in the array, it should do the following: Print out the full array, with the first item in UPPERCASE, followed by all the other items in lowercase. Then it should print out the full array again, but with only the second item in UPPERCASE. Then it should print out the full array again, but with only the third item in UPPERCASE, and so on. After each print out of the array, it should print out ```------```.
